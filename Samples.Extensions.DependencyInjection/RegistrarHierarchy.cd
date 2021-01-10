@@ -1,0 +1,145 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="Bitz.Extensions.DependencyInjection.Configurator" Collapsed="true">
+    <Position X="17.25" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAABAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Configuration\Configurator.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Bitz.Extensions.DependencyInjection.Implementation.BasedOn">
+    <Position X="10.25" Y="10.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Implementation\BasedOn.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Bitz.Extensions.DependencyInjection.Implementation.Implementing">
+    <Position X="14.75" Y="10.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Implementation\Implementing.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Bitz.Extensions.DependencyInjection.Implementation.Only">
+    <Position X="12.5" Y="10.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Implementation\Only.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Bitz.Extensions.DependencyInjection.Implementation._ImplementationType">
+    <Position X="12.25" Y="8.5" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQAAAAAAAAA=</HashCode>
+      <FileName>Implementation\_ImplementationType.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Bitz.Extensions.DependencyInjection.Interfaces.AllInterfaces">
+    <Position X="2.25" Y="10.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Interfaces\AllInterfaces.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Bitz.Extensions.DependencyInjection.Interfaces.OnlyInterface">
+    <Position X="6.75" Y="10.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAABAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Interfaces\OnlyInterface.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Bitz.Extensions.DependencyInjection.Interfaces.NoInterface">
+    <Position X="4.5" Y="10.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Interfaces\NoInterface.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Bitz.Extensions.DependencyInjection.Interfaces._Interfaces">
+    <Position X="4.5" Y="8.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Interfaces\_Interfaces.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Bitz.Extensions.DependencyInjection.Lifetimes.Scoped">
+    <Position X="2.25" Y="6.5" Width="2.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAgAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Lifetimes\Scoped.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Bitz.Extensions.DependencyInjection.Lifetimes.Singleton">
+    <Position X="9.25" Y="6.5" Width="2.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAgAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Lifetimes\Singleton.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Bitz.Extensions.DependencyInjection.Lifetimes.Transient">
+    <Position X="5.75" Y="6.5" Width="2.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAgAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Lifetimes\Transient.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Bitz.Extensions.DependencyInjection.Lifetimes._Lifetime">
+    <Position X="5.75" Y="4.5" Width="2.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAgAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Lifetimes\_Lifetime.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Bitz.Extensions.DependencyInjection.Configuration.Registrar" Collapsed="true">
+    <Position X="19" Y="1" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAACAAAQEEAAAAAQAIBIAAAAQAAABAiQIABIAAkgEAU=</HashCode>
+      <FileName>Registration\Configure.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Interface Name="Bitz.Extensions.DependencyInjection.Contracts.IAssembly">
+    <Position X="2.5" Y="2" Width="2.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAIAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Contracts\IAssembly.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="Bitz.Extensions.DependencyInjection.Contracts.IBitz">
+    <Position X="8.25" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Contracts\IBitz.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="Bitz.Extensions.DependencyInjection.Contracts.IConfigure">
+    <Position X="14.25" Y="2" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAABAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Contracts\IConfigure.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="Bitz.Extensions.DependencyInjection.Contracts.IImplementing">
+    <Position X="6" Y="2" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAACAAAAAAAEAAAE=</HashCode>
+      <FileName>Contracts\IImplementing.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="Bitz.Extensions.DependencyInjection.Contracts.ILifetime">
+    <Position X="8.75" Y="2" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAgAAAAIAAgAAAA=</HashCode>
+      <FileName>Contracts\ILifetime.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="Bitz.Extensions.DependencyInjection.Contracts.IType">
+    <Position X="11" Y="2" Width="2.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAQAAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAgAAA=</HashCode>
+      <FileName>Contracts\IType.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

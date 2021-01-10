@@ -1,0 +1,540 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Bitz.Extensions.DependencyInjection</name>
+    </assembly>
+    <members>
+        <member name="T:Bitz.Extensions.DependencyInjection.Configurator">
+            <summary>
+            Configures the service collection.
+            </summary>
+        </member>
+        <member name="M:Bitz.Extensions.DependencyInjection.Configurator.Configure(Microsoft.Extensions.DependencyInjection.IServiceCollection,System.Collections.Generic.List{System.Type},Bitz.Extensions.DependencyInjection.Contracts._Contract,Bitz.Extensions.DependencyInjection.Lifetimes._Lifetime)">
+            <summary>
+            Configure the service collection.
+            </summary>
+            <param name="services">Instance of IServiceCollection.</param>
+            <param name="implementations">Various implementations.</param>
+            <param name="contracts">Various interfaces.</param>
+            <param name="lifetimes">Various lifetimes.</param>
+        </member>
+        <member name="M:Bitz.Extensions.DependencyInjection.Configurator.Configure(Microsoft.Extensions.DependencyInjection.IServiceCollection,System.Type,Bitz.Extensions.DependencyInjection.Contracts._Contract,Bitz.Extensions.DependencyInjection.Lifetimes._Lifetime)">
+            <summary>
+            Configure 
+            </summary>
+            <param name="services">Instance of IServiceCollection.</param>
+            <param name="concreteType">Concrete type to configure</param>
+            <param name="contracts">Single contract type to implement.</param>
+            <param name="lifetimes">Various lifetimes.</param>
+        </member>
+        <member name="M:Bitz.Extensions.DependencyInjection.Configurator.ConfigureConcrete(Microsoft.Extensions.DependencyInjection.IServiceCollection,System.Type,Bitz.Extensions.DependencyInjection.Lifetimes._Lifetime)">
+            <summary>
+            Configure a concrete type for various lifetimes.
+            </summary>
+            <param name="services">Instance of IServiceCollection.</param>
+            <param name="concreteType">Concrete type to be configured for the lifetime.</param>
+            <param name="lifetime">Various lifetimes.</param>
+        </member>
+        <member name="M:Bitz.Extensions.DependencyInjection.Configurator.ConfigureConcrete(Microsoft.Extensions.DependencyInjection.IServiceCollection,System.Type,Bitz.Extensions.DependencyInjection.Lifetimes.Transient)">
+            <summary>
+            Configure a concrete type as transient lifetime.
+            </summary>
+            <param name="services">Instance of IServiceCollection.</param>
+            <param name="concreteType">Concrete type to be configured for the lifetime.</param>
+            <param name="lifetime">Transient lifetime.</param>
+        </member>
+        <member name="M:Bitz.Extensions.DependencyInjection.Configurator.ConfigureConcrete(Microsoft.Extensions.DependencyInjection.IServiceCollection,System.Type,Bitz.Extensions.DependencyInjection.Lifetimes.Scoped)">
+            <summary>
+            Configure a concrete type as a scoped lifetime.
+            </summary>
+            <param name="services">Instance of IServiceCollection.</param>
+            <param name="concreteType">Concrete type to be configured for the lifetime.</param>
+            <param name="lifetime">Scoped lifetime.</param>
+        </member>
+        <member name="M:Bitz.Extensions.DependencyInjection.Configurator.Configure(Microsoft.Extensions.DependencyInjection.IServiceCollection,System.Type,Bitz.Extensions.DependencyInjection.Lifetimes.Singleton)">
+            <summary>
+            Configure a concrete type as a singleton with no interfaces.
+            </summary>
+            <param name="services">Instance of IServiceCollection.</param>
+            <param name="concreteType">Concrete type to be configured for the lifetime.</param>
+            <param name="lifetime">Singleton lifetime.</param>
+        </member>
+        <member name="M:Bitz.Extensions.DependencyInjection.Configurator.Configure(Microsoft.Extensions.DependencyInjection.IServiceCollection,System.Type,Bitz.Extensions.DependencyInjection.Contracts.AllContracts,Bitz.Extensions.DependencyInjection.Lifetimes._Lifetime)">
+            <summary>
+            Configure a concrete type with all interfaces.
+            </summary>
+            <param name="services">Instance of IServiceCollection.</param>
+            <param name="concreteType">Concrete type to be configured for the lifetime.</param>
+            <param name="interfaces">Configure the concrete type for all interfaces.</param>
+            <param name="lifetime">Various lifetimes.</param>
+        </member>
+        <member name="M:Bitz.Extensions.DependencyInjection.Configurator.Configure(Microsoft.Extensions.DependencyInjection.IServiceCollection,System.Type,System.Type,Bitz.Extensions.DependencyInjection.Lifetimes._Lifetime)">
+            <summary>
+            Configure a concrete type with all interfaces.
+            </summary>
+            <param name="services">Instance of IServiceCollection.</param>
+            <param name="concreteType">Concrete type to be configured for the lifetime.</param>
+            <param name="contractType">specific contract to configure the concrete type as.</param>
+            <param name="lifetime">Various lifetimes.</param>
+        </member>
+        <member name="M:Bitz.Extensions.DependencyInjection.Configurator.Configure(Microsoft.Extensions.DependencyInjection.IServiceCollection,System.Type,System.Type,Bitz.Extensions.DependencyInjection.Lifetimes.Transient)">
+            <summary>
+            Configure a concrete type for a specific contract type for a transient lifetime.
+            </summary>
+            <param name="services">Instance of IServiceCollection.</param>
+            <param name="concreteType">Concrete type to be configured for the lifetime.</param>
+            <param name="contractType">Various contract types.</param>
+            <param name="lifetime">Transient lifetime.</param>
+        </member>
+        <member name="M:Bitz.Extensions.DependencyInjection.Configurator.Configure(Microsoft.Extensions.DependencyInjection.IServiceCollection,System.Type,System.Type,Bitz.Extensions.DependencyInjection.Lifetimes.Scoped)">
+            <summary>
+            Configure a concrete type for a specific contract type for a scoped lifetime.
+            </summary>
+            <param name="services">Instance of IServiceCollection.</param>
+            <param name="concreteType">Implementation type.</param>
+            <param name="contractType">Contract type.</param>
+            <param name="lifetime">Scoped lifetime.</param>
+        </member>
+        <member name="M:Bitz.Extensions.DependencyInjection.Configurator.Configure(Microsoft.Extensions.DependencyInjection.IServiceCollection,System.Type,System.Type,Bitz.Extensions.DependencyInjection.Lifetimes.Singleton)">
+            <summary>
+            Configure a concrete type for a specific contract type for a singleton lifetime.
+            </summary>
+            <param name="services">Instance of IServiceCollection.</param>
+            <param name="concreteType">Concrete type to be configured for the lifetime.</param>
+            <param name="contractType">specific contract to configure the concrete type as.</param>
+            <param name="lifetime">Singleton lifetime.</param>
+        </member>
+        <member name="M:Bitz.Extensions.DependencyInjection.Configurator.Configure(Microsoft.Extensions.DependencyInjection.IServiceCollection,System.Type,Bitz.Extensions.DependencyInjection.Contracts.OnlyContract,Bitz.Extensions.DependencyInjection.Lifetimes._Lifetime)">
+            <summary>
+            Configure a concrete type for only single contract type for various lifetimes.
+            </summary>
+            <param name="services">Instance of IServiceCollection.</param>
+            <param name="concreteType">Concrete type to be configured for the lifetime.</param>
+            <param name="contracts">only a single contract.</param>
+            <param name="lifetime">various lifetimes.</param>
+        </member>
+        <member name="M:Bitz.Extensions.DependencyInjection.Configurator.Configure(Microsoft.Extensions.DependencyInjection.IServiceCollection,System.Type,Bitz.Extensions.DependencyInjection.Contracts.NoContracts,Bitz.Extensions.DependencyInjection.Lifetimes._Lifetime)">
+            <summary>
+            Configure a concrete type with no interface for for various lifetimes.
+            </summary>
+            <param name="services">Instance of IServiceCollection.</param>
+            <param name="concreteType">Concrete type to be configured for the lifetime.</param>
+            <param name="contract">only a single contract.</param>
+            <param name="lifetime"></param>
+        </member>
+        <member name="M:Bitz.Extensions.DependencyInjection.Configurator.Configure(Microsoft.Extensions.DependencyInjection.IServiceCollection,System.Type,Bitz.Extensions.DependencyInjection.Lifetimes._Lifetime)">
+            <summary>
+            Configure a concrete type with no interface for various lifetimes.
+            </summary>
+            <param name="services">Instance of IServiceCollection.</param>
+            <param name="concreteType">Concrete type to be configured for the lifetime.</param>
+            <param name="lifetime">various lifetimes.</param>
+        </member>
+        <member name="M:Bitz.Extensions.DependencyInjection.Configurator.Configure(Microsoft.Extensions.DependencyInjection.IServiceCollection,System.Type,Bitz.Extensions.DependencyInjection.Lifetimes.Transient)">
+            <summary>
+            Configure a concrete type with a transient lifetime.
+            </summary>
+            <param name="services">Instance of IServiceCollection.</param>
+            <param name="concreteType">Concrete type to be configured for the lifetime.</param>
+            <param name="lifetime">Transient lifetime.</param>
+        </member>
+        <member name="M:Bitz.Extensions.DependencyInjection.Configurator.Configure(Microsoft.Extensions.DependencyInjection.IServiceCollection,System.Type,Bitz.Extensions.DependencyInjection.Lifetimes.Scoped)">
+            <summary>
+            Configure a concrete type with a scoped lifetime.
+            </summary>
+            <param name="services">Instance of IServiceCollection.</param>
+            <param name="concreteType">Concrete type to be configured for the lifetime.</param>
+            <param name="lifetime">Scoped lifetime.</param>
+        </member>
+        <member name="M:Bitz.Extensions.DependencyInjection.Configurator.ConfigureConcrete(Microsoft.Extensions.DependencyInjection.IServiceCollection,System.Type,Bitz.Extensions.DependencyInjection.Lifetimes.Singleton)">
+            <summary>
+            Configure a concrete type with a singleton lifetime.
+            </summary>
+            <param name="services">Instance of IServiceCollection.</param>
+            <param name="concreteType">Concrete type to be configured for the lifetime.</param>
+            <param name="lifetime">Singleton lifetime.</param>
+        </member>
+        <member name="T:Bitz.Extensions.DependencyInjection.Contracts.IAssembly">
+            <summary>
+            Defines methods for locating an assembly to have classes injected from.
+            </summary>
+        </member>
+        <member name="M:Bitz.Extensions.DependencyInjection.Contracts.IAssembly.InAssembly``1">
+            <summary>
+            Use the assembly that contains a type for TClass.
+            </summary>
+            <typeparam name="TClass">Generic type for TClass.</typeparam>
+            <returns>Type instance.</returns>
+        </member>
+        <member name="M:Bitz.Extensions.DependencyInjection.Contracts.IAssembly.InAssembly(System.Type)">
+            <summary>
+            Use the assembly that contains a type for TClass.
+            </summary>
+            <param name="type">Type that has the assembly to be used.</param>
+            <returns>Type instance.</returns>
+        </member>
+        <member name="M:Bitz.Extensions.DependencyInjection.Contracts.IAssembly.InAssembly(System.Reflection.Assembly)">
+            <summary>
+            Use the assembly that contains a type for TClass.
+            </summary>
+            <returns>Type instance.</returns>
+        </member>
+        <member name="M:Bitz.Extensions.DependencyInjection.Contracts.IAssembly.ThisAssembly">
+            <summary>
+            Use the assembly that this configuration is within.
+            </summary>
+            <returns>Type instance.</returns>
+        </member>
+        <member name="T:Bitz.Extensions.DependencyInjection.Contracts.IBitz">
+            <summary>
+            Marker contract. 
+            </summary>
+        </member>
+        <member name="P:Bitz.Extensions.DependencyInjection.Contracts.IBitz.Copyright">
+            <summary>
+            Copyright.
+            </summary>
+        </member>
+        <member name="T:Bitz.Extensions.DependencyInjection.Contracts.IConfigure">
+            <summary>
+            Configure the service collection with configured services.
+            </summary>
+        </member>
+        <member name="M:Bitz.Extensions.DependencyInjection.Contracts.IConfigure.Configure">
+            <summary>
+            Configure the service collection
+            </summary>
+        </member>
+        <member name="M:Bitz.Extensions.DependencyInjection.Contracts.IConfigure.ConfigureOrThrow">
+            <summary>
+            Ensures that the configuration is valid.
+            </summary>
+            <exception cref="T:Bitz.Extensions.DependencyInjection.Exceptions.ConfigurationException">thrown if the configuration finds no types to register.</exception>
+        </member>
+        <member name="T:Bitz.Extensions.DependencyInjection.Contracts.IImplementing">
+            <summary>
+            Allow specification of the types of interfaces to register.
+            </summary>
+        </member>
+        <member name="M:Bitz.Extensions.DependencyInjection.Contracts.IImplementing.AllInterfaces">
+            <summary>
+            Use all interfaces for registration of implementation.
+            </summary>
+            <returns>Lifetime instance implementing an ILifetime.</returns>
+        </member>
+        <member name="M:Bitz.Extensions.DependencyInjection.Contracts.IImplementing.AsInterface``1">
+            <summary>
+            Use specific interface for registration of implementation.
+            </summary>
+            <typeparam name="TInterface">Specific interface to register implementation.</typeparam>
+            <returns>Lifetime instance implementing an ILifetime.</returns>
+        </member>
+        <member name="M:Bitz.Extensions.DependencyInjection.Contracts.IImplementing.WithoutInterfaces">
+            <summary>
+            Allow registration without any interfaces.
+            </summary>
+            <returns>Lifetime instance implementing an ILifetime.</returns>
+        </member>
+        <member name="T:Bitz.Extensions.DependencyInjection.Contracts.ILifetime">
+            <summary>
+            Allow specification of the type of lifetime.
+            </summary>
+        </member>
+        <member name="M:Bitz.Extensions.DependencyInjection.Contracts.ILifetime.AsSingleton">
+            <summary>
+            Configure implementations as a singleton.
+            </summary>
+            <returns>Lifetime instance implementing an IConfigure.</returns>
+        </member>
+        <member name="M:Bitz.Extensions.DependencyInjection.Contracts.ILifetime.AsScoped">
+            <summary>
+            Configure implementations as scoped.
+            </summary>
+            <returns>Lifetime instance implementing an IConfigure.</returns>
+        </member>
+        <member name="M:Bitz.Extensions.DependencyInjection.Contracts.ILifetime.AsTransient">
+            <summary>
+            Configure implementations as transient.
+            </summary>
+            <returns>Lifetime instance implementing an IConfigure.</returns>
+        </member>
+        <member name="T:Bitz.Extensions.DependencyInjection.Contracts.IType">
+            <summary>
+            Specify the type of classes to be configured.
+            </summary>
+        </member>
+        <member name="M:Bitz.Extensions.DependencyInjection.Contracts.IType.BasedOn``1">
+            <summary>
+            Based on a specific type.
+            </summary>
+            <typeparam name="TBase">Specific base type.</typeparam>
+            <returns>Lifetime instance implementing an IImplementing.</returns>
+        </member>
+        <member name="M:Bitz.Extensions.DependencyInjection.Contracts.IType.BasedOn(System.Type)">
+            <summary>
+            Based on a specific type.
+            </summary>
+            <param name="type">Specific base type.</param>
+            <returns>Lifetime instance implementing an IImplementing.</returns>
+            <remarks>
+            Needed to register implementations based on open generics.
+            </remarks>
+        </member>
+        <member name="M:Bitz.Extensions.DependencyInjection.Contracts.IType.Implementing``1">
+            <summary>
+            Based on classes implementing a specified interface.
+            </summary>
+            <typeparam name="TInterface">Specific interface.</typeparam>
+            <returns>Lifetime instance implementing an IImplementing.</returns>
+        </member>
+        <member name="M:Bitz.Extensions.DependencyInjection.Contracts.IType.Only``1">
+            <summary>
+            Register a single type
+            </summary>
+            <typeparam name="TType">Specific class.</typeparam>
+            <returns>Lifetime instance implementing an IImplementing contract.</returns>
+        </member>
+        <member name="T:Bitz.Extensions.DependencyInjection.Contracts.AllContracts">
+            <summary>
+            Register all class contracts.
+            </summary>
+        </member>
+        <member name="T:Bitz.Extensions.DependencyInjection.Contracts.NoContracts">
+            <summary>
+            Register no contracts, register only the class as itself.
+            </summary>
+        </member>
+        <member name="T:Bitz.Extensions.DependencyInjection.Contracts.OnlyContract">
+            <summary>
+            Register only as the specified contract.
+            </summary>
+        </member>
+        <member name="F:Bitz.Extensions.DependencyInjection.Contracts.OnlyContract.Interface">
+            <summary>
+            Only the specific contract interface.
+            </summary>
+        </member>
+        <member name="M:Bitz.Extensions.DependencyInjection.Contracts.OnlyContract.#ctor(System.Type)">
+            <summary>
+            only can be created internally, must have contract type
+            </summary>
+            <param name="type"></param>
+        </member>
+        <member name="T:Bitz.Extensions.DependencyInjection.Contracts._Contract">
+            <summary>
+            base for all contract configurations.
+            </summary>
+        </member>
+        <member name="M:Bitz.Extensions.DependencyInjection.Contracts._Contract.#ctor">
+            <summary>
+            only can be created internally.
+            </summary>
+        </member>
+        <member name="T:Bitz.Extensions.DependencyInjection.Exceptions.ConfigurationException">
+            <summary>
+            thrown when there is no change in the number of services after configuration.
+            </summary>
+        </member>
+        <member name="M:Bitz.Extensions.DependencyInjection.Exceptions.ConfigurationException.#ctor">
+            <summary>
+            cannot create instance with no parameters.
+            </summary>
+        </member>
+        <member name="M:Bitz.Extensions.DependencyInjection.Exceptions.ConfigurationException.#ctor(System.String)">
+            <summary>
+            create with a message.
+            </summary>
+            <param name="message"></param>
+        </member>
+        <member name="T:Bitz.Extensions.DependencyInjection.Implementation.BasedOn">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="T:Bitz.Extensions.DependencyInjection.Implementation.Implementing">
+            <summary>
+            Register classes implementing a specific interface type.
+            </summary>
+        </member>
+        <member name="M:Bitz.Extensions.DependencyInjection.Implementation.Implementing.#ctor(System.Type)">
+            <summary>
+            Register classes implementing a specific interface.
+            </summary>
+            <param name="type"></param>
+            <exception cref="T:System.ArgumentException">Thrown when the type parameter is not an interface.</exception>
+        </member>
+        <member name="T:Bitz.Extensions.DependencyInjection.Implementation.Implementing`1">
+            <summary>
+            Register classes implementing a specific interface type.
+            </summary>
+            <typeparam name="TInterface">Type of interface to register.</typeparam>
+        </member>
+        <member name="M:Bitz.Extensions.DependencyInjection.Implementation.Implementing`1.#ctor">
+            <summary>
+            Pass the interface type to the base.
+            </summary>
+        </member>
+        <member name="T:Bitz.Extensions.DependencyInjection.Implementation.Only">
+            <summary>
+            Register classes 
+            </summary>
+        </member>
+        <member name="M:Bitz.Extensions.DependencyInjection.Implementation.Only.#ctor(System.Type)">
+            <summary>
+            Register only the specified type.
+            </summary>
+            <param name="type">Concrete type to be registered.</param>
+            <exception cref="T:System.ArgumentException">Thrown when the type is an interface.</exception>
+        </member>
+        <member name="T:Bitz.Extensions.DependencyInjection.Implementation._ImplementationType">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:Bitz.Extensions.DependencyInjection.Implementation._ImplementationType.Type">
+            <summary>
+            instant
+            </summary>
+        </member>
+        <member name="M:Bitz.Extensions.DependencyInjection.Implementation._ImplementationType.#ctor(System.Type)">
+            <summary>
+            
+            </summary>
+            <param name="type"></param>
+        </member>
+        <member name="T:Bitz.Extensions.DependencyInjection.IServiceCollection_">
+            <summary>
+            IServiceCollection registration methods.
+            </summary>
+        </member>
+        <member name="T:Bitz.Extensions.DependencyInjection.Lifetimes.Scoped">
+            <summary>
+            Register with a scoped lifetime.
+            </summary>
+        </member>
+        <member name="M:Bitz.Extensions.DependencyInjection.Lifetimes.Scoped.AddLifetime``2(Microsoft.Extensions.DependencyInjection.IServiceCollection)">
+            <summary>
+            Add a concrete type with a specific interface.
+            </summary>
+            <typeparam name="TInterface">Type of the interface implementation.</typeparam>
+            <typeparam name="TConcrete">Concrete type implementing TInterface.</typeparam>
+            <param name="services"></param>
+            <returns></returns>
+        </member>
+        <member name="T:Bitz.Extensions.DependencyInjection.Lifetimes.Singleton">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:Bitz.Extensions.DependencyInjection.Lifetimes.Singleton.AddLifetime``2(Microsoft.Extensions.DependencyInjection.IServiceCollection)">
+            <summary>
+            
+            </summary>
+            <typeparam name="TInterface">Type of the interface implementation.</typeparam>
+            <typeparam name="TConcrete">Concrete type implementing TInterface.</typeparam>
+            <param name="services"></param>
+            <returns></returns>
+        </member>
+        <member name="T:Bitz.Extensions.DependencyInjection.Lifetimes.Transient">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:Bitz.Extensions.DependencyInjection.Lifetimes.Transient.AddLifetime``2(Microsoft.Extensions.DependencyInjection.IServiceCollection)">
+            <summary>
+            
+            </summary>
+            <typeparam name="TInterface">Type of the interface implementation.</typeparam>
+            <typeparam name="TConcrete">Concrete type implementing TInterface.</typeparam>
+            <param name="services"></param>
+            <returns></returns>
+        </member>
+        <member name="T:Bitz.Extensions.DependencyInjection.Lifetimes._Lifetime">
+            <summary>
+            Basis for lifetime registration.
+            </summary>
+        </member>
+        <member name="M:Bitz.Extensions.DependencyInjection.Lifetimes._Lifetime.#ctor">
+            <summary>
+            Constructor for all lifetimes.
+            </summary>
+        </member>
+        <member name="M:Bitz.Extensions.DependencyInjection.Lifetimes._Lifetime.AddLifetime``2(Microsoft.Extensions.DependencyInjection.IServiceCollection)">
+            <summary>
+            Add a specific lifetime for a concrete type.
+            </summary>
+            <typeparam name="TInterface">Type of the interface implementation.</typeparam>
+            <typeparam name="TConcrete">Concrete type implementing TInterface.</typeparam>
+            <param name="services">Instance of a service collection.</param>
+            <returns></returns>
+        </member>
+        <member name="M:Bitz.Extensions.DependencyInjection.Configuration.Registrar.Configure">
+            <summary>
+            Configure selected services.
+            </summary>
+        </member>
+        <member name="M:Bitz.Extensions.DependencyInjection.Configuration.Registrar.ConfigureOrThrow">
+            <summary>
+            Ensures that the configuration is valid.
+            </summary>
+            <exception cref="T:Bitz.Extensions.DependencyInjection.Exceptions.ConfigurationException">thrown if the configuration finds no types to register.</exception>
+        </member>
+        <member name="M:Bitz.Extensions.DependencyInjection.Configuration.Registrar.SelectTypes(System.Reflection.Assembly,Bitz.Extensions.DependencyInjection.Implementation._ImplementationType)">
+            <summary>
+            Get all types from that match the desired implementation type.
+            </summary>
+            <param name="assembly">Selected assembly.</param>
+            <param name="implementationType">Selected implementation type.</param>
+            <returns>All types that match the implementation type 
+            within the assembly.</returns>
+        </member>
+        <member name="M:Bitz.Extensions.DependencyInjection.Configuration.Registrar.InstantiableTypesIn(System.Reflection.Assembly)">
+            <summary>
+            Get all types from the selected assembly that are 
+            not interfaces nor abstract.
+            </summary>
+            <param name="assembly">Selected assembly.</param>
+            <returns>All instantiable types.</returns>
+        </member>
+        <member name="M:Bitz.Extensions.DependencyInjection.Configuration.Registrar.GetTypesImplementing(System.Collections.Generic.List{System.Type},Bitz.Extensions.DependencyInjection.Implementation._ImplementationType)">
+            <summary>
+            Get types from list that conform to the selected implementation type.
+            </summary>
+            <param name="types"></param>
+            <param name="implementationType"></param>
+            <returns>Types for the selected implementation type.</returns>
+        </member>
+        <member name="M:Bitz.Extensions.DependencyInjection.Configuration.Registrar.SelectTypes(System.Collections.Generic.List{System.Type},Bitz.Extensions.DependencyInjection.Implementation.BasedOn)">
+            <summary>
+            Select types that are based-on a specific type.
+            </summary>
+            <param name="types">Instantiable types within the specified assembly.</param>
+            <param name="basedOn">Types based-on a specific type.</param>
+            <returns>List of types that are based-on a specific type.</returns>
+        </member>
+        <member name="M:Bitz.Extensions.DependencyInjection.Configuration.Registrar.DerivesFrom(System.Type,System.Type)">
+            <summary>
+            See if the class can be casted to the other.
+            </summary>
+            <param name="source">Source type.</param>
+            <param name="derivesFrom">Type to that source could be derived from.</param>
+            <returns>True if the class can be casted.</returns>
+        </member>
+        <member name="M:Bitz.Extensions.DependencyInjection.Configuration.Registrar.SelectTypes(System.Collections.Generic.List{System.Type},Bitz.Extensions.DependencyInjection.Implementation.Implementing)">
+            <summary>
+            Select types that are implementing a specific interface.
+            </summary>
+            <param name="types">List of instantiable types.</param>
+            <param name="implementing"></param>
+            <returns>All types that implement a specific interface.</returns>
+        </member>
+        <member name="M:Bitz.Extensions.DependencyInjection.Configuration.Registrar.SelectTypes(System.Collections.Generic.List{System.Type},Bitz.Extensions.DependencyInjection.Implementation.Only)">
+            <summary>
+            Get the specified type from the list of types.
+            </summary>
+            <param name="types">List of instantiable types.</param>
+            <param name="only">Specific type to select.</param>
+            <returns>The specified type from the list of instantiable types.</returns>
+        </member>
+    </members>
+</doc>
