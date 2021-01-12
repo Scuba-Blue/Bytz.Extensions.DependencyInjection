@@ -5,7 +5,7 @@ using Samples.Extensions.DependencyInjection.Engines.Contracts;
 using System;
 using Xunit;
 
-namespace Tests.Extensions.DependencyInjection.Type
+namespace Tests.Extensions.DependencyInjection.ImplementationType
 {
     public class OnlyInterfaceBaseContractTests : TestBase
     {

@@ -5,8 +5,12 @@ using Samples.Extensions.DependencyInjection.Services.Contracts;
 
 namespace Samples.Extensions.DependencyInjection.Services
 {
+    /// <summary>
+    /// Sample order service.
+    /// </summary>
     public class OrderService : IOrderService
     {
+        //  made public for unit testing only.
         public ITaxEngine TaxEngine { get; private set; }
 
         public OrderService(ITaxEngine taxEngine)
@@ -16,6 +20,7 @@ namespace Samples.Extensions.DependencyInjection.Services
 
         public Order LoadOrder(int orderId)
         {
+            //  no real logic
             return new Order { OrderId = orderId };
         }
 

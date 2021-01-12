@@ -1,38 +1,38 @@
 ﻿using Bitz.Extensions.DependencyInjection;
+using Bitz.Extensions.DependencyInjection.Exceptions;
 using Microsoft.Extensions.DependencyInjection;
 using Samples.Extensions.DependencyInjection.Contracts;
 using Samples.Extensions.DependencyInjection.Engines.Contracts;
 using System;
 using Xunit;
 
-namespace Tests.Extensions.DependencyInjection.Type
+namespace Tests.Extensions.DependencyInjection.ImplementationType
 {
-    public class OnlyInterfaceTests: TestBase
+    public class OnlyInterfaceExceptionTests : TestBase
     {
         protected override void OnRegister(IServiceCollection services)
         {
-            services.Register
+            _exception = Assert.Throws<OnlyInterfaceException>
+            (
+                () => services.Register
                 (r => r
                     .InAssemblyOf<IEngine>()
-                    .Implementing<ITaxEngine>()
+                    .Implementing<IEngine>()
                     .OnlyInterface<ITaxEngine>()
                     .AsTransient()
                     .ConfigureOrThrow()
-                );
+                )
+            );
         }
 
         private ITaxEngine Service => this.Provider.GetRequiredService<ITaxEngine>();
 
-        [Fact]
-        public void Type_OnlyInterface_BaseContract()
-        {
-            Assert.Throws<InvalidOperationException>(() => this.AssertInstance<IEngine>());
-        }
+        private Exception _exception;
 
         [Fact]
-        public void Type_OnlyInterface_SpecificContract()
+        public void Type_OnlyInterfaceException_InvalidCast()
         {
-            this.AssertInstance<ITaxEngine>();
+            Assert.IsType<OnlyInterfaceException>(_exception);
         }
     }
 }

@@ -10,6 +10,12 @@ namespace Bitz.Extensions.DependencyInjection
     /// </summary>
     static public class IServiceCollection_
     {
+        /// <summary>
+        /// register components with IServiceCollection.
+        /// </summary>
+        /// <param name="services">Instance of IServiceCollection.</param>
+        /// <param name="setup">Method chain to configure IServiceCollection.</param>
+        /// <returns>Instance of IServiceCollection.</returns>
         static public IServiceCollection Register
         (
             this IServiceCollection services,

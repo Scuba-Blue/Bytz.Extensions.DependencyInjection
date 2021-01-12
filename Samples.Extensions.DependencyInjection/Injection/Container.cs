@@ -12,8 +12,7 @@ namespace Samples.Extensions.DependencyInjection.Injection
 
         public static IServiceProvider Provider { get; private set; }
 
-        public static IServiceProvider Configure
-        (Action<IServiceCollection> configure)
+        public static IServiceProvider Configure(Action<IServiceCollection> configure)
         {
             configure?.Invoke(_services);
 

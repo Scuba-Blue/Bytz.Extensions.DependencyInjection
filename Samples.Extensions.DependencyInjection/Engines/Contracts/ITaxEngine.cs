@@ -6,6 +6,5 @@ namespace Samples.Extensions.DependencyInjection.Engines.Contracts
     /// sample tax engine.
     /// </summary>
     public interface ITaxEngine : IEngine
-    {
-    }
+    { }
 }

@@ -3,6 +3,5 @@
 namespace Samples.Extensions.DependencyInjection.Engines.Contracts
 {
     public interface IShippingEngine : IEngine
-    {
-    }
+    { }
 }

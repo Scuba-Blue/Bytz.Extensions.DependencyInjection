@@ -5,16 +5,16 @@ using Samples.Extensions.DependencyInjection.Engines.Base;
 using Samples.Extensions.DependencyInjection.Engines.Contracts;
 using Xunit;
 
-namespace Tests.Extensions.DependencyInjection.Type
+namespace Tests.Extensions.DependencyInjection.ImplementationType
 {
-    public class BasedOnTTests : TestBase
+    public class BasedOnTypeTests : TestBase
     {
         protected override void OnRegister(IServiceCollection services)
         {
             services.Register
             (r => r
                 .InAssemblyOf<IEngine>()
-                .BasedOn<EngineBase>()
+                .BasedOn(typeof(EngineBase))
                 .AllInterfaces()
                 .AsTransient()
                 .ConfigureOrThrow()
@@ -22,7 +22,7 @@ namespace Tests.Extensions.DependencyInjection.Type
         }
 
         [Fact]
-        public void Type_BasedOnT_GetInstanceByContract()
+        public void Type_BasedOnType_GetInstanceByContract()
         {
             this.AssertInstance<IShippingEngine>();
         }

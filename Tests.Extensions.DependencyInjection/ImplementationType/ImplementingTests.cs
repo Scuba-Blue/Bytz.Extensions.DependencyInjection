@@ -1,30 +1,35 @@
 ﻿using Bitz.Extensions.DependencyInjection;
 using Microsoft.Extensions.DependencyInjection;
 using Samples.Extensions.DependencyInjection.Contracts;
-using Samples.Extensions.DependencyInjection.Engines.Base;
 using Samples.Extensions.DependencyInjection.Engines.Contracts;
 using Xunit;
 
-namespace Tests.Extensions.DependencyInjection.Type
+namespace Tests.Extensions.DependencyInjection.ImplementationType
 {
-    public class BasedOnTypeTests : TestBase
+    public class ImplementingTests : TestBase
     {
         protected override void OnRegister(IServiceCollection services)
         {
             services.Register
             (r => r
                 .InAssemblyOf<IEngine>()
-                .BasedOn(typeof(EngineBase))
+                .Implementing<ITaxEngine>()
                 .AllInterfaces()
                 .AsTransient()
-                .ConfigureOrThrow()
+                .Configure()
             );
         }
 
         [Fact]
-        public void Type_BasedOnType_GetInstanceByContract()
+        public void Type_Implementing_GetInstanceByContract()
         {
-            this.AssertInstance<IShippingEngine>();
+            this.AssertInstance<ITaxEngine>();
+        }
+
+        [Fact]
+        public void Type_Implementing_GetInstanceByBaseContract()
+        {
+            this.AssertInstance<IEngine>();
         }
     }
 }

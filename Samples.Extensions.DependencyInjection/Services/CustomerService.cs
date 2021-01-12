@@ -3,6 +3,9 @@ using Samples.Extensions.DependencyInjection.Services.Contracts;
 
 namespace Samples.Extensions.DependencyInjection.Services
 {
+    /// <summary>
+    /// sample customer service.
+    /// </summary>
     public class CustomerService
     : ICustomerService
     {

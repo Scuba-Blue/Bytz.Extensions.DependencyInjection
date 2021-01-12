@@ -3,6 +3,5 @@
 namespace Samples.Extensions.DependencyInjection.Engine
 {
     public class TaxEngine : ITaxEngine
-    {
-    }
+    { }
 }
