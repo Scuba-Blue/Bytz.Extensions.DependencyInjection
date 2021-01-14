@@ -34,19 +34,4 @@ Global
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {7B28043C-8234-4982-9C76-5F85F8711668}
 	EndGlobalSection
-	GlobalSection(TeamFoundationVersionControl) = preSolution
-		SccNumberOfProjects = 4
-		SccEnterpriseProvider = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
-		SccTeamFoundationServer = http://vulcan/bitz
-		SccLocalPath0 = .
-		SccProjectUniqueName1 = Samples.Extensions.DependencyInjection\\Samples.Extensions.DependencyInjection.csproj
-		SccProjectName1 = Samples.Extensions.DependencyInjection
-		SccLocalPath1 = Samples.Extensions.DependencyInjection
-		SccProjectUniqueName2 = Tests.Extensions.DependencyInjection\\Tests.Extensions.DependencyInjection.csproj
-		SccProjectName2 = Tests.Extensions.DependencyInjection
-		SccLocalPath2 = Tests.Extensions.DependencyInjection
-		SccProjectUniqueName3 = Bitz.Extensions.DependencyInjection\\Bitz.Extensions.DependencyInjection.csproj
-		SccProjectName3 = Bitz.Extensions.DependencyInjection
-		SccLocalPath3 = Bitz.Extensions.DependencyInjection
-	EndGlobalSection
 EndGlobal
