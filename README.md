@@ -1,3 +1,5 @@
+![.NET](https://github.com/Scuba-Blue/Bitz.Extensions.DependencyInjection/workflows/.NET/badge.svg)
+
 # Bitz.Extensions.DependencyInjection
 
 A library of .NET Standard Extensions for IServiceCollection to increase productivity and code quality by allowing multiple registerations to be performed within a single statement.
