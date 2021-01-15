@@ -29,7 +29,6 @@
 
   <ItemGroup>
     <ProjectReference Include="..\Bitz.Extensions.DependencyInjection\Bitz.Extensions.DependencyInjection.csproj" />
-    <ProjectReference Include="..\Samples.Extensions.DependencyInjection\Samples.Extensions.DependencyInjection.csproj" />
   </ItemGroup>
 
 </Project>

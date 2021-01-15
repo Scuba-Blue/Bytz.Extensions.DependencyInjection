@@ -1,9 +1,9 @@
 ﻿using Bitz.Extensions.DependencyInjection;
 using Bitz.Extensions.DependencyInjection.Exceptions;
 using Microsoft.Extensions.DependencyInjection;
-using Samples.Extensions.DependencyInjection.Contracts;
-using Samples.Extensions.DependencyInjection.Engines.Contracts;
 using System;
+using Tests.Extensions.DependencyInjection.Samples.Contracts;
+using Tests.Extensions.DependencyInjection.Samples.Engines.Contracts;
 using Xunit;
 
 namespace Tests.Extensions.DependencyInjection.ImplementationType

@@ -1,4 +1,4 @@
-﻿using Samples.Extensions.DependencyInjection.Contracts;
+﻿using Tests.Extensions.DependencyInjection.Samples.Contracts;
 
 namespace Tests.Extensions.DependencyInjection.InAssembly.Services.Contracts
 {

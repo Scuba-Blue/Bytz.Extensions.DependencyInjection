@@ -1,7 +1,7 @@
 ﻿using Bitz.Extensions.DependencyInjection;
 using Microsoft.Extensions.DependencyInjection;
-using Samples.Extensions.DependencyInjection.Contracts;
 using Tests.Extensions.DependencyInjection.InAssembly.Services.Contracts;
+using Tests.Extensions.DependencyInjection.Samples.Contracts;
 using Xunit;
 
 namespace Tests.Extensions.DependencyInjection.InAssembly
