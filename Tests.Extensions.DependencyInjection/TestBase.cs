@@ -6,7 +6,7 @@ using Xunit;
 namespace Tests.Extensions.DependencyInjection
 {
     /// <summary>
-    /// base for all bitz di tests.
+    /// base for all bytz di tests.
     /// </summary>
     public abstract class TestBase
     {

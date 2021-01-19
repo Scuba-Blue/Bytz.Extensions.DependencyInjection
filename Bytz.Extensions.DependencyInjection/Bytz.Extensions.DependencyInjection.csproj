@@ -1,0 +1,33 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup Label="Globals">
+    <SccProjectName>SAK</SccProjectName>
+    <SccProvider>SAK</SccProvider>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccLocalPath>SAK</SccLocalPath>
+  </PropertyGroup>
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.1</TargetFramework>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Remove="Contracts\Types\**" />
+    <EmbeddedResource Remove="Contracts\Types\**" />
+    <None Remove="Contracts\Types\**" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Remove="Bytz.Extensions.DependencyInjection.csproj.vspscc" />
+    <None Remove="Bytz.Extensions.DependencyInjection.csproj.vspscc" />
+    <None Remove="Bytz.Extensions.DependencyInjection.xml" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.Extensions.DependencyInjection" Version="5.0.1" />
+  </ItemGroup>
+
+</Project>

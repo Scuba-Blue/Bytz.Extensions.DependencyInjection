@@ -1,5 +1,5 @@
-﻿using Bitz.Extensions.DependencyInjection;
-using Bitz.Extensions.DependencyInjection.Exceptions;
+﻿using Bytz.Extensions.DependencyInjection;
+using Bytz.Extensions.DependencyInjection.Exceptions;
 using Microsoft.Extensions.DependencyInjection;
 using System;
 using Tests.Extensions.DependencyInjection.Samples.Contracts;

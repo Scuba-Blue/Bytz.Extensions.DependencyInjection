@@ -28,7 +28,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\Bitz.Extensions.DependencyInjection\Bitz.Extensions.DependencyInjection.csproj" />
+    <ProjectReference Include="..\Bytz.Extensions.DependencyInjection\Bytz.Extensions.DependencyInjection.csproj" />
   </ItemGroup>
 
 </Project>

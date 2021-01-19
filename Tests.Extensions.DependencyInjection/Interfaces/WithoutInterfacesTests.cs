@@ -1,4 +1,4 @@
-﻿using Bitz.Extensions.DependencyInjection;
+﻿using Bytz.Extensions.DependencyInjection;
 using Microsoft.Extensions.DependencyInjection;
 using System;
 using Tests.Extensions.DependencyInjection.Samples.Contracts;
