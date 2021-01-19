@@ -7,7 +7,7 @@ on:
     branches: [ main ]
 
 env:
-  solution: ./Bitz.Extensions.DependencyInjection/Bitz.Extensions.DependencyInjection.sln
+  solution: ./Bitz.Extensions.DependencyInjection.sln
   packageDir: ./Bitz.Extensions.DependencyInjection/pkgs
 
 jobs:
