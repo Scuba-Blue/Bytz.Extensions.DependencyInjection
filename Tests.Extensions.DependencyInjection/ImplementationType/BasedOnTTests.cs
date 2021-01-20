@@ -1,7 +1,7 @@
 ﻿using Bytz.Extensions.DependencyInjection;
 using Microsoft.Extensions.DependencyInjection;
-using Tests.Extensions.DependencyInjection.Samples.Bases;
 using Tests.Extensions.DependencyInjection.Samples.Contracts;
+using Tests.Extensions.DependencyInjection.Samples.Engines.Base;
 using Tests.Extensions.DependencyInjection.Samples.Engines.Contracts;
 using Xunit;
 

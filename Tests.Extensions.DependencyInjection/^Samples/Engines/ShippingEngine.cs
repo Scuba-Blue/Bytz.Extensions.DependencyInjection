@@ -1,4 +1,4 @@
-﻿using Tests.Extensions.DependencyInjection.Samples.Bases;
+﻿using Tests.Extensions.DependencyInjection.Samples.Engines.Base;
 using Tests.Extensions.DependencyInjection.Samples.Engines.Contracts;
 
 namespace Tests.Extensions.DependencyInjection.Samples.Engines
