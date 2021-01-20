@@ -2,24 +2,6 @@
 
 # Bytz.Extensions.DependencyInjection
 
-A library of .NET Standard Extensions for IServiceCollection to increase productivity and code quality by allowing multiple registerations to be performed within a single statement.
+A set of .NET Standard Extensions to simplify the registration of components with .NET Core IServiceCollection Dependency Injection.
 
-
-        /// <summary>
-        /// add all services as transient.
-        /// </summary>
-        /// <param name="services">instance of the service collection.</param>
-        /// <returns>instance of the service collection.</returns>
-        public static IServiceCollection AddServices(this IServiceCollection services)
-        {
-            return 
-                services.Register(r => r
-                    .InThisAssembly()
-                    .Implementing<IService>()
-                    .AllInterfaces()
-                    .AsTransient()
-                    .Configure());
-        }
-        
-        
-c
+Written by [M. Douglas Bowan II]
