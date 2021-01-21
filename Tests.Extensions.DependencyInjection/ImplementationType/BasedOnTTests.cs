@@ -24,7 +24,7 @@ namespace Tests.Extensions.DependencyInjection.ImplementationType
         [Fact]
         public void Type_BasedOnT_GetInstanceByContract()
         {
-            this.AssertInstance<IShippingEngine>();
+            this.Provider.AssertResolution<IShippingEngine>();
         }
     }
 }

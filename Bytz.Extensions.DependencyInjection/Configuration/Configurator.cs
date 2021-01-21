@@ -38,300 +38,299 @@ namespace Bytz.Extensions.DependencyInjection
         /// Configure 
         /// </summary>
         /// <param name="services">Instance of IServiceCollection.</param>
-        /// <param name="concreteType">Concrete type to configure</param>
+        /// <param name="implementationType">Concrete type to configure</param>
         /// <param name="contracts">Single contract type to implement.</param>
         /// <param name="lifetimes">Various lifetimes.</param>
         private void Configure
         (
             IServiceCollection services, 
-            Type concreteType, 
+            Type implementationType, 
             _Contract contracts, 
             _Lifetime lifetimes
         )
         {
-            //  todo:   this needs thought
-            ConfigureConcrete(services, concreteType, lifetimes);
+            ConfigureImplementation(services, implementationType, lifetimes);
 
-            Configure(services, concreteType, contracts as AllContracts, lifetimes);
-            Configure(services, concreteType, contracts as OnlyContract, lifetimes);
-            Configure(services, concreteType, contracts as NoContracts, lifetimes);
+            Configure(services, implementationType, contracts as AllContracts, lifetimes);
+            Configure(services, implementationType, contracts as OnlyContract, lifetimes);
+            Configure(services, implementationType, contracts as NoInterfaces, lifetimes);
         }
 
         /// <summary>
-        /// Configure a concrete type for various lifetimes.
+        /// Configure an implementation type for various lifetimes.
         /// </summary>
         /// <param name="services">Instance of IServiceCollection.</param>
-        /// <param name="concreteType">Concrete type to be configured for the lifetime.</param>
+        /// <param name="implementationType">Implementation type to be configured for the lifetime.</param>
         /// <param name="lifetime">Various lifetimes.</param>
-        private void ConfigureConcrete
+        private void ConfigureImplementation
         (
             IServiceCollection services, 
-            Type concreteType,
+            Type implementationType,
             _Lifetime lifetime
         )
         {
-            ConfigureConcrete(services, concreteType, lifetime as Transient);
-            ConfigureConcrete(services, concreteType, lifetime as Scoped);
-            ConfigureConcrete(services, concreteType, lifetime as Singleton);
+            ConfigureImplementation(services, implementationType, lifetime as Transient);
+            ConfigureImplementation(services, implementationType, lifetime as Scoped);
+            ConfigureImplementation(services, implementationType, lifetime as Singleton);
         }
 
         /// <summary>
-        /// Configure a concrete type as transient lifetime.
+        /// Configure an implementation type as transient lifetime.
         /// </summary>
         /// <param name="services">Instance of IServiceCollection.</param>
-        /// <param name="concreteType">Concrete type to be configured for the lifetime.</param>
+        /// <param name="implementationType">Concrete type to be configured for the lifetime.</param>
         /// <param name="lifetime">Transient lifetime.</param>
-        private void ConfigureConcrete
+        private void ConfigureImplementation
         (
             IServiceCollection services,
-            Type concreteType,
+            Type implementationType,
             Transient lifetime
         )
         {
-            if (lifetime != null) services.AddTransient(concreteType);
+            if (lifetime != null) services.AddTransient(implementationType);
         }
 
         /// <summary>
-        /// Configure a concrete type as a scoped lifetime.
+        /// Configure an implementation type as a scoped lifetime.
         /// </summary>
         /// <param name="services">Instance of IServiceCollection.</param>
-        /// <param name="concreteType">Concrete type to be configured for the lifetime.</param>
+        /// <param name="implementationType">Concrete type to be configured for the lifetime.</param>
         /// <param name="lifetime">Scoped lifetime.</param>
-        private void ConfigureConcrete
+        private void ConfigureImplementation
         (
             IServiceCollection services,
-            Type concreteType,
+            Type implementationType,
             Scoped lifetime
         )
         {
-            if (lifetime != null) services.AddScoped(concreteType);
+            if (lifetime != null) services.AddScoped(implementationType);
         }
 
         /// <summary>
-        /// Configure a concrete type as a singleton with no interfaces.
+        /// Configure an implementation type as a singleton with no interfaces.
         /// </summary>
         /// <param name="services">Instance of IServiceCollection.</param>
-        /// <param name="concreteType">Concrete type to be configured for the lifetime.</param>
+        /// <param name="implementationType">Concrete type to be configured for the lifetime.</param>
         /// <param name="lifetime">Singleton lifetime.</param>
         private void Configure
         (
             IServiceCollection services,
-            Type concreteType,
+            Type implementationType,
             Singleton lifetime
         )
         {
-            if (lifetime != null) services.AddSingleton(concreteType);
+            if (lifetime != null) services.AddSingleton(implementationType);
         }
 
         /// <summary>
-        /// Configure a concrete type with all interfaces.
+        /// Configure an implementation type with all interfaces.
         /// </summary>
         /// <param name="services">Instance of IServiceCollection.</param>
-        /// <param name="concreteType">Concrete type to be configured for the lifetime.</param>
+        /// <param name="implementationType">Concrete type to be configured for the lifetime.</param>
         /// <param name="interfaces">Configure the concrete type for all interfaces.</param>
         /// <param name="lifetime">Various lifetimes.</param>
         private void Configure
         (
             IServiceCollection services, 
-            Type concreteType, 
+            Type implementationType, 
             AllContracts interfaces, 
             _Lifetime lifetime)
         {
             if (interfaces != null)
             {
-                concreteType
+                implementationType
                     .GetInterfaces()
                     .ToList()
                     .ForEach(i =>
                     {
-                        Configure(services, concreteType, i, lifetime);
+                        Configure(services, implementationType, i, lifetime);
                     });
             }
         }
 
         /// <summary>
-        /// Configure a concrete type with all interfaces.
+        /// Configure an implementation type with all interfaces.
         /// </summary>
         /// <param name="services">Instance of IServiceCollection.</param>
-        /// <param name="concreteType">Concrete type to be configured for the lifetime.</param>
+        /// <param name="implementationType">Concrete type to be configured for the lifetime.</param>
         /// <param name="contractType">specific contract to configure the concrete type as.</param>
         /// <param name="lifetime">Various lifetimes.</param>
         private void Configure
         (
             IServiceCollection services, 
-            Type concreteType, 
+            Type implementationType, 
             Type contractType, 
             _Lifetime lifetime
         )
         {
-            Configure(services, concreteType, contractType, lifetime as Transient);
-            Configure(services, concreteType, contractType, lifetime as Scoped);
-            Configure(services, concreteType, contractType, lifetime as Singleton);
+            Configure(services, implementationType, contractType, lifetime as Transient);
+            Configure(services, implementationType, contractType, lifetime as Scoped);
+            Configure(services, implementationType, contractType, lifetime as Singleton);
         }
 
         /// <summary>
-        /// Configure a concrete type for a specific contract type for a transient lifetime.
+        /// Configure an implementation type for a specific contract type for a transient lifetime.
         /// </summary>
         /// <param name="services">Instance of IServiceCollection.</param>
-        /// <param name="concreteType">Concrete type to be configured for the lifetime.</param>
+        /// <param name="implementationType">Concrete type to be configured for the lifetime.</param>
         /// <param name="contractType">Various contract types.</param>
         /// <param name="lifetime">Transient lifetime.</param>
         private void Configure
         (
             IServiceCollection services, 
-            Type concreteType, 
+            Type implementationType, 
             Type contractType, 
             Transient lifetime
         )
         {
-            if (lifetime != null) services.AddTransient(contractType, concreteType);
+            if (lifetime != null) services.AddTransient(contractType, implementationType);
         }
 
         /// <summary>
-        /// Configure a concrete type for a specific contract type for a scoped lifetime.
+        /// Configure an implementation type for a specific contract type for a scoped lifetime.
         /// </summary>
         /// <param name="services">Instance of IServiceCollection.</param>
-        /// <param name="concreteType">Implementation type.</param>
+        /// <param name="implementationType">Implementation type.</param>
         /// <param name="contractType">Contract type.</param>
         /// <param name="lifetime">Scoped lifetime.</param>
         private void Configure
         (
             IServiceCollection services, 
-            Type concreteType, 
+            Type implementationType, 
             Type contractType, 
             Scoped lifetime
         )
         {
-            if (lifetime != null) services.AddScoped(contractType, concreteType);
+            if (lifetime != null) services.AddScoped(contractType, implementationType);
         }
 
         /// <summary>
-        /// Configure a concrete type for a specific contract type for a singleton lifetime.
+        /// Configure an implementation type for a specific contract type for a singleton lifetime.
         /// </summary>
         /// <param name="services">Instance of IServiceCollection.</param>
-        /// <param name="concreteType">Concrete type to be configured for the lifetime.</param>
+        /// <param name="implementationType">Concrete type to be configured for the lifetime.</param>
         /// <param name="contractType">specific contract to configure the concrete type as.</param>
         /// <param name="lifetime">Singleton lifetime.</param>
         private void Configure
         (
             IServiceCollection services, 
-            Type concreteType, 
+            Type implementationType, 
             Type contractType, 
             Singleton lifetime
         )
         {
-            if (lifetime != null) services.AddSingleton(contractType, concreteType);
+            if (lifetime != null) services.AddSingleton(contractType, implementationType);
         }
 
         /// <summary>
-        /// Configure a concrete type for only single contract type for various lifetimes.
+        /// Configure an implementation type for only single contract type for various lifetimes.
         /// </summary>
         /// <param name="services">Instance of IServiceCollection.</param>
-        /// <param name="concreteType">Concrete type to be configured for the lifetime.</param>
+        /// <param name="implementationType">Concrete type to be configured for the lifetime.</param>
         /// <param name="contracts">only a single contract.</param>
         /// <param name="lifetime">various lifetimes.</param>
 
         private void Configure
         (
             IServiceCollection services, 
-            Type concreteType, 
+            Type implementationType, 
             OnlyContract contracts, 
             _Lifetime lifetime
         )
         {
             if (contracts != null)
             {
-                Configure(services, concreteType, contracts.Interface, lifetime);
+                Configure(services, implementationType, contracts.Interface, lifetime);
             }
         }
 
         #region no interface
 
         /// <summary>
-        /// Configure a concrete type with no interface for for various lifetimes.
+        /// Configure an implementation type with no interface for for various lifetimes.
         /// </summary>
         /// <param name="services">Instance of IServiceCollection.</param>
-        /// <param name="concreteType">Concrete type to be configured for the lifetime.</param>
+        /// <param name="implementationType">Concrete type to be configured for the lifetime.</param>
         /// <param name="contract">only a single contract.</param>
         /// <param name="lifetime"></param>
         private void Configure
         (
             IServiceCollection services, 
-            Type concreteType, 
-            NoContracts contract, 
+            Type implementationType, 
+            NoInterfaces contract, 
             _Lifetime lifetime
         )
         {
             if (contract != null)
             {
-                Configure(services, concreteType, lifetime);
+                Configure(services, implementationType, lifetime);
             }
         }
 
         /// <summary>
-        /// Configure a concrete type with no interface for various lifetimes.
+        /// Configure an implementation type with no interface for various lifetimes.
         /// </summary>
         /// <param name="services">Instance of IServiceCollection.</param>
-        /// <param name="concreteType">Concrete type to be configured for the lifetime.</param>
+        /// <param name="implementationType">Concrete type to be configured for the lifetime.</param>
         /// <param name="lifetime">various lifetimes.</param>
         private void Configure
         (
             IServiceCollection services, 
-            Type concreteType, 
+            Type implementationType, 
             _Lifetime lifetime
         )
         {
-            Configure(services, concreteType, lifetime as Transient);
-            Configure(services, concreteType, lifetime as Scoped);
-            Configure(services, concreteType, lifetime as Singleton);
+            Configure(services, implementationType, lifetime as Transient);
+            Configure(services, implementationType, lifetime as Scoped);
+            Configure(services, implementationType, lifetime as Singleton);
         }
 
         /// <summary>
-        /// Configure a concrete type with a transient lifetime.
+        /// Configure an implementation type with a transient lifetime.
         /// </summary>
         /// <param name="services">Instance of IServiceCollection.</param>
-        /// <param name="concreteType">Concrete type to be configured for the lifetime.</param>
+        /// <param name="implementationType">Concrete type to be configured for the lifetime.</param>
         /// <param name="lifetime">Transient lifetime.</param>
         private void Configure
         (
             IServiceCollection services, 
-            Type concreteType, 
+            Type implementationType, 
             Transient lifetime
         )
         {
-            if (lifetime != null) services.AddTransient(concreteType);
+            if (lifetime != null) services.AddTransient(implementationType);
         }
 
         /// <summary>
-        /// Configure a concrete type with a scoped lifetime.
+        /// Configure an implementation type with a scoped lifetime.
         /// </summary>
         /// <param name="services">Instance of IServiceCollection.</param>
-        /// <param name="concreteType">Concrete type to be configured for the lifetime.</param>
+        /// <param name="implementationType">Concrete type to be configured for the lifetime.</param>
         /// <param name="lifetime">Scoped lifetime.</param>
         private void Configure
         (
             IServiceCollection services, 
-            Type concreteType, 
+            Type implementationType, 
             Scoped lifetime
         )
         {
-            if (lifetime != null) services.AddScoped(concreteType);
+            if (lifetime != null) services.AddScoped(implementationType);
         }
 
         /// <summary>
-        /// Configure a concrete type with a singleton lifetime.
+        /// Configure an implementation type with a singleton lifetime.
         /// </summary>
         /// <param name="services">Instance of IServiceCollection.</param>
-        /// <param name="concreteType">Concrete type to be configured for the lifetime.</param>
+        /// <param name="implementationType">Concrete type to be configured for the lifetime.</param>
         /// <param name="lifetime">Singleton lifetime.</param>
-        private void ConfigureConcrete
+        private void ConfigureImplementation
         (
             IServiceCollection services, 
-            Type concreteType, 
+            Type implementationType, 
             Singleton lifetime
         )
         {
-            if (lifetime != null) services.AddSingleton(concreteType);
+            if (lifetime != null) services.AddSingleton(implementationType);
         }
 
         #endregion no interface

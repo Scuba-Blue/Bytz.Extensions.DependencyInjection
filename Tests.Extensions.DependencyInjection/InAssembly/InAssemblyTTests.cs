@@ -23,13 +23,13 @@ namespace Tests.Extensions.DependencyInjection.InAssembly
         [Fact]
         public void InAssemblyOf_T_GetInstanceByContract()
         {
-            this.AssertInstance<IShippingEngine>();
+            this.Provider.AssertResolution<IShippingEngine>();
         }
         
         [Fact]
         public void InAssemblyOf_T_GetInstanceByBaseContract()
         {
-            this.AssertInstance<IEngine>();
+            this.Provider.AssertResolution<IEngine>();
         }
     }
 }

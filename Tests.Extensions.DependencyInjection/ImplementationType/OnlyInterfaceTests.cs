@@ -1,6 +1,6 @@
 ﻿using Bytz.Extensions.DependencyInjection;
+using Bytz.Extensions.DependencyInjection.Exceptions;
 using Microsoft.Extensions.DependencyInjection;
-using System;
 using Tests.Extensions.DependencyInjection.Samples.Contracts;
 using Tests.Extensions.DependencyInjection.Samples.Engines.Contracts;
 using Xunit;
@@ -26,13 +26,13 @@ namespace Tests.Extensions.DependencyInjection.ImplementationType
         [Fact]
         public void Type_OnlyInterface_BaseContract()
         {
-            Assert.Throws<InvalidOperationException>(() => this.AssertInstance<IEngine>());
+            Assert.Throws<AssertResolutionException>(() => this.Provider.AssertResolution<IEngine>());
         }
 
         [Fact]
         public void Type_OnlyInterface_SpecificContract()
         {
-            this.AssertInstance<ITaxEngine>();
+            this.Provider.AssertResolution<ITaxEngine>();
         }
     }
 }

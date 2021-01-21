@@ -4,8 +4,10 @@ using System;
 
 namespace Bytz.Extensions.DependencyInjection.Configuration
 {
-    internal partial class Registrar
-    : IType
+    /// <summary>
+    /// Partial implementation of the registrar.
+    /// </summary>
+    internal partial class Registrar : IType
     {
         public IImplementing BasedOn<TClass>
         () 
@@ -17,18 +19,31 @@ namespace Bytz.Extensions.DependencyInjection.Configuration
             return this;
         }
 
+        /// <summary>
+        /// Assert that TClass is not a string type.
+        /// </summary>
+        /// <typeparam name="TClass">Type to be asserted.</typeparam>
         private void AssertNotString<TClass>
         ()
         {
             this.AssertNotString(typeof(TClass));
         }
 
+        /// <summary>
+        /// Assert that the parameter is not a string type.
+        /// </summary>
+        /// <param name="type">Type to be asserted.</param>
         private void AssertNotString(Type type)
         {
             if (type == typeof(string))
                 throw new ArgumentException($"Type cannot be a string.");
         }
 
+        /// <summary>
+        /// Set the type for based-on.
+        /// </summary>
+        /// <typeparam name="TType">Type of implementation.</typeparam>
+        /// <typeparam name="TClass">Type of class for the implementation.</typeparam>
         private void SetType<TType, TClass>
         ()
         where TType : _ImplementationType

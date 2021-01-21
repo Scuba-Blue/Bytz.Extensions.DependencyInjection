@@ -13,8 +13,7 @@ namespace Bytz.Extensions.DependencyInjection.Configuration
             return this;
         }
 
-        public ILifetime OnlyInterface<TInterface>
-        ()
+        public ILifetime OnlyInterface<TInterface>()
         where TInterface : class
         {
             AssertInterface<TInterface>();
@@ -24,6 +23,10 @@ namespace Bytz.Extensions.DependencyInjection.Configuration
             return this;
         }
 
+        /// <summary>
+        /// Assert that TInterface is actually an interface.
+        /// </summary>
+        /// <typeparam name="TInterface">Type to be asserted is a genuine interface.</typeparam>
         private void AssertInterface<TInterface>() 
         where TInterface : class
         {
@@ -35,7 +38,7 @@ namespace Bytz.Extensions.DependencyInjection.Configuration
 
         public ILifetime WithoutInterfaces()
         {
-            _interfaces = new NoContracts();
+            _interfaces = new NoInterfaces();
 
             return this;
         }

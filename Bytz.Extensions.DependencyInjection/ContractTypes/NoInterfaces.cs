@@ -3,7 +3,7 @@
     /// <summary>
     /// Register no contracts, register only the class as itself.
     /// </summary>
-    internal class NoContracts
+    internal class NoInterfaces
     : _Contract
     { }
 }

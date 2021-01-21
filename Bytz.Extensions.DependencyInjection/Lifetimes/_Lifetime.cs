@@ -14,7 +14,7 @@ namespace Bytz.Extensions.DependencyInjection.Lifetimes
         { }
 
         /// <summary>
-        /// Add a specific lifetime for a concrete type.
+        /// Add a specific lifetime for an implementation type.
         /// </summary>
         /// <typeparam name="TInterface">Type of the interface implementation.</typeparam>
         /// <typeparam name="TImplementation">Concrete type implementing TInterface.</typeparam>

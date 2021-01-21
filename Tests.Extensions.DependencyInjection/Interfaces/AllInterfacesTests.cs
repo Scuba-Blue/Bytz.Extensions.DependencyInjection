@@ -23,13 +23,13 @@ namespace Tests.Extensions.DependencyInjection.Interfaces
         [Fact]
         public void AllInterfaces_GetInstanceByContract()
         {
-            this.AssertInstance<IShippingEngine>();
+            this.Provider.AssertResolution<IShippingEngine>();
         }
 
         [Fact]
         public void AllInterfaces_GetInstanceByBaseContract()
         {
-            this.AssertInstance<IEngine>();
+            this.Provider.AssertResolution<IEngine>();
         }
     }
 }

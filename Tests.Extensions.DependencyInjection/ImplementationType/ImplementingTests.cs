@@ -23,13 +23,13 @@ namespace Tests.Extensions.DependencyInjection.ImplementationType
         [Fact]
         public void Type_Implementing_GetInstanceByContract()
         {
-            this.AssertInstance<ITaxEngine>();
+            this.Provider.AssertResolution<ITaxEngine>();
         }
 
         [Fact]
         public void Type_Implementing_GetInstanceByBaseContract()
         {
-            this.AssertInstance<IEngine>();
+            this.Provider.AssertResolution<IEngine>();
         }
     }
 }

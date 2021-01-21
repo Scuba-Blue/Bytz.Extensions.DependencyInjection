@@ -1,6 +1,6 @@
 ﻿using Bytz.Extensions.DependencyInjection;
+using Bytz.Extensions.DependencyInjection.Exceptions;
 using Microsoft.Extensions.DependencyInjection;
-using System;
 using Tests.Extensions.DependencyInjection.Samples.Contracts;
 using Tests.Extensions.DependencyInjection.Samples.Engines.Contracts;
 using Xunit;
@@ -24,13 +24,13 @@ namespace Tests.Extensions.DependencyInjection.Interfaces
         [Fact]
         public void Interfaces_OnlyInterface()
         {
-            this.AssertInstance<IShippingEngine>();
+            this.Provider.AssertResolution<IShippingEngine>();
         }
 
         [Fact]
         public void Interfaces_OnlyInterface_BaseInterface_Exception()
         {
-            Assert.Throws<InvalidOperationException>(() => this.AssertInstance<IEngine>());
+            Assert.Throws<AssertResolutionException>(() => this.Provider.AssertResolution<IEngine>());
         }
     }
 }

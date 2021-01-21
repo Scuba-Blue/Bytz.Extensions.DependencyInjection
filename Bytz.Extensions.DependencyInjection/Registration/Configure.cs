@@ -19,7 +19,7 @@ namespace Bytz.Extensions.DependencyInjection.Configuration
         {
             List<Type> types = SelectTypes(_assembly, _basedOn);
 
-            AssertOnlyInterface(types, _interfaces as OnlyContract);
+            AssertOnlyContracts(types, _interfaces as OnlyContract);
 
             (new Configurator())
                 .Configure
@@ -31,7 +31,12 @@ namespace Bytz.Extensions.DependencyInjection.Configuration
                 );
         }
 
-        private void AssertOnlyInterface(List<Type> types, OnlyContract onlyContract)
+        /// <summary>
+        /// Assert that all types are castable to the specified contract type.
+        /// </summary>
+        /// <param name="types">List of types.</param>
+        /// <param name="onlyContract"></param>
+        private void AssertOnlyContracts(List<Type> types, OnlyContract onlyContract)
         {
             Type type = onlyContract?.Interface;
 
@@ -60,16 +65,12 @@ namespace Bytz.Extensions.DependencyInjection.Configuration
             }
         }
 
-        /// <summary>
-        /// Ensures that the configuration is valid.
-        /// </summary>
-        /// <exception cref="OnlyInterfaceException">thrown if the configuration finds no types to register.</exception>
         public void ConfigureOrThrow()
         {
             List<Type> types = SelectTypes(_assembly, _basedOn);
 
             AssertTypeToRegister(types);
-            AssertOnlyInterface(types, _interfaces as OnlyContract);
+            AssertOnlyContracts(types, _interfaces as OnlyContract);
 
             (new Configurator())
                 .Configure
@@ -185,11 +186,12 @@ namespace Bytz.Extensions.DependencyInjection.Configuration
         }
 
         /// <summary>
-        /// See if the class can be casted to the other.
+        /// See if the class is a derivation of another.
         /// </summary>
         /// <param name="source">Source type.</param>
         /// <param name="derivesFrom">Type to that source could be derived from.</param>
         /// <returns>True if the class can be casted.</returns>
+        /// TODO:    test for IsSubClassOf
         private bool DerivesFrom
         (
             Type source, 

@@ -6,6 +6,9 @@ using System.Reflection;
 
 namespace Bytz.Extensions.DependencyInjection.Configuration
 {
+    /// <summary>
+    /// Partial implementation of the registrar.
+    /// </summary>
     internal partial class Registrar
     : IConfigure
     {

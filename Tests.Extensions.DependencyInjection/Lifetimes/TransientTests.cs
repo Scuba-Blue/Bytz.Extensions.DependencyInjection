@@ -23,19 +23,19 @@ namespace Tests.Extensions.DependencyInjection.Lifetimes
         [Fact]
         public void Lifetime_Transient_GetInstanceByContract()
         {
-            this.AssertInstance<IShippingEngine>();
+            this.Provider.AssertResolution<IShippingEngine>();
         }
 
         [Fact]
         public void Lifetime_Transient_GetInstanceByBaseContract()
         {
-            this.AssertInstance<IEngine>();
+            this.Provider.AssertResolution<IEngine>();
         }
 
         [Fact]
         public void Lifetime_Transient_AssertLifetime()
         {
-            this.AssertLifeTime<IShippingEngine>(ServiceLifetime.Transient);
+            this.ServiceCollection.AssertLifetime<IShippingEngine>(ServiceLifetime.Transient);
         }
     }
 }

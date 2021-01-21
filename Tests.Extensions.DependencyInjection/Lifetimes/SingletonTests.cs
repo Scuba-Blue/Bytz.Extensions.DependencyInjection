@@ -23,13 +23,13 @@ namespace Tests.Extensions.DependencyInjection.Lifetimes
         [Fact]
         public void Lifetime_Singleton_GetInstanceByContract()
         {
-            this.AssertInstance<ICacheService>();
+            this.Provider.AssertResolution<ICacheService>();
         }
 
         [Fact]
         public void Lifetime_Singleton_AssertLifetime()
         {
-            this.AssertLifeTime<ICacheService>(ServiceLifetime.Singleton);
+            this.ServiceCollection.AssertLifetime<ICacheService>(ServiceLifetime.Singleton);
         }
     }
 }

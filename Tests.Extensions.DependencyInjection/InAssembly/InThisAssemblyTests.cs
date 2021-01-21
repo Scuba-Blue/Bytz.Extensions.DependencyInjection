@@ -23,13 +23,13 @@ namespace Tests.Extensions.DependencyInjection.InAssembly
         [Fact]
         public void InThisAssemblyGetInstanceByContract()
         {
-            this.AssertInstance<IMessageService>();
+            this.Provider.AssertResolution<IMessageService>();
         }
 
         [Fact]
         public void InThisAssembly_GetInstanceByBaseContract()
         {
-            this.AssertInstance<IService>();
+            this.Provider.AssertResolution<IService>();
         }
     }
 }
