@@ -1,4 +1,5 @@
-﻿namespace Bytz.Extensions.DependencyInjection.Exceptions
+﻿
+namespace Bytz.Extensions.DependencyInjection.Exceptions
 {
     /// <summary>
     /// thrown when the configuration finds no types.
