@@ -17,7 +17,7 @@ namespace Tests.Extensions.DependencyInjection.Services
                 .Implementing<IService>()
                 .AllInterfaces()
                 .AsTransient()
-                .ConfigureOrThrow()
+                .Configure()
             );
 
             //  register engines
@@ -27,11 +27,11 @@ namespace Tests.Extensions.DependencyInjection.Services
                 .Implementing<IEngine>()
                 .AllInterfaces()
                 .AsTransient()
-                .ConfigureOrThrow()
+                .Configure()
             );
         }
 
-        private IOrderService Service => this.Provider.GetRequiredService<IOrderService>();
+        private IOrderService Service => this.ServiceProvider.GetRequiredService<IOrderService>();
 
         [Fact]
         public void Samples_OrderService_CheckDependency()

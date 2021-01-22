@@ -16,20 +16,20 @@ namespace Tests.Extensions.DependencyInjection.InAssembly
                 .Implementing<IMessageService>()
                 .AllInterfaces()
                 .AsTransient()
-                .ConfigureOrThrow()
+                .Configure()
             );
         }
 
         [Fact]
         public void InThisAssemblyGetInstanceByContract()
         {
-            this.Provider.AssertResolution<IMessageService>();
+            this.ServiceProvider.AssertResolution<IMessageService>();
         }
 
         [Fact]
         public void InThisAssembly_GetInstanceByBaseContract()
         {
-            this.Provider.AssertResolution<IService>();
+            this.ServiceProvider.AssertResolution<IService>();
         }
     }
 }

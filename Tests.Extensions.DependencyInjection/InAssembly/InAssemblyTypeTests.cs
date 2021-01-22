@@ -16,20 +16,20 @@ namespace Tests.Extensions.DependencyInjection.InAssembly
                 .Implementing<IShippingEngine>()
                 .AllInterfaces()
                 .AsTransient()
-                .ConfigureOrThrow()
+                .Configure()
             );
         }
 
         [Fact]
         public void InAssemblyOf_Type_GetInstanceByContract()
         {
-            this.Provider.AssertResolution<IShippingEngine>();
+            this.ServiceProvider.AssertResolution<IShippingEngine>();
         }
 
         [Fact]
         public void InAssemblyOf_Type_GetInstanceByBaseContract()
         {
-            this.Provider.AssertResolution<IEngine>();
+            this.ServiceProvider.AssertResolution<IEngine>();
         }
     }
 }

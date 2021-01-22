@@ -16,20 +16,20 @@ namespace Tests.Extensions.DependencyInjection.Lifetimes
                 .Implementing<IShippingEngine>()
                 .AllInterfaces()
                 .AsScoped()
-                .ConfigureOrThrow()
+                .Configure()
             );
         }
 
         [Fact]
         public void Lifetime_Scoped_GetInstanceByContract()
         {
-            this.Provider.AssertResolution<IShippingEngine>();
+            this.ServiceProvider.AssertResolution<IShippingEngine>();
         }
 
         [Fact]
         public void Lifetime_Scoped_GetInstanceByBaseContract()
         {
-            this.Provider.AssertResolution<IEngine>();
+            this.ServiceProvider.AssertResolution<IEngine>();
         }
 
         [Fact]

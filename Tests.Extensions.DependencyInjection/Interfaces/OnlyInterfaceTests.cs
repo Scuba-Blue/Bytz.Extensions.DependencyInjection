@@ -17,20 +17,20 @@ namespace Tests.Extensions.DependencyInjection.Interfaces
                 .Implementing<IShippingEngine>()
                 .OnlyInterface<IShippingEngine>()
                 .AsTransient()
-                .ConfigureOrThrow()
+                .Configure()
             );
         }
 
         [Fact]
         public void Interfaces_OnlyInterface()
         {
-            this.Provider.AssertResolution<IShippingEngine>();
+            this.ServiceProvider.AssertResolution<IShippingEngine>();
         }
 
         [Fact]
         public void Interfaces_OnlyInterface_BaseInterface_Exception()
         {
-            Assert.Throws<AssertResolutionException>(() => this.Provider.AssertResolution<IEngine>());
+            Assert.Throws<AssertResolutionException>(() => this.ServiceProvider.AssertResolution<IEngine>());
         }
     }
 }

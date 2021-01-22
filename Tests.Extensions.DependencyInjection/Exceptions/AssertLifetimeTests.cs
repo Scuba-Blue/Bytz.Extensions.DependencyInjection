@@ -1,12 +1,13 @@
 ﻿using Bytz.Extensions.DependencyInjection;
+using Bytz.Extensions.DependencyInjection.Exceptions;
 using Microsoft.Extensions.DependencyInjection;
 using Tests.Extensions.DependencyInjection.Samples.Contracts;
 using Tests.Extensions.DependencyInjection.Samples.Services.Contracts;
 using Xunit;
 
-namespace Tests.Extensions.DependencyInjection.Lifetimes
+namespace Tests.Extensions.DependencyInjection.Exceptions
 {
-    public class SingletonTests : TestBase
+    public class AssertLifetimeTests : TestBase
     {
         protected override void OnRegister(IServiceCollection services)
         {
@@ -21,15 +22,15 @@ namespace Tests.Extensions.DependencyInjection.Lifetimes
         }
 
         [Fact]
-        public void Lifetime_Singleton_GetInstanceByContract()
+        public void Exceptions_Lifetime_Expected()
         {
-            this.ServiceProvider.AssertResolution<ICacheService>();
+            this.ServiceCollection.AssertLifetime<ICacheService>(ServiceLifetime.Singleton);
         }
 
         [Fact]
-        public void Lifetime_Singleton_AssertLifetime()
+        public void Exceptions_Lifetime_Not_Expected()
         {
-            this.ServiceCollection.AssertLifetime<ICacheService>(ServiceLifetime.Singleton);
+            Assert.Throws<AssertLifetimeException>(() => this.ServiceCollection.AssertLifetime<ICacheService>(ServiceLifetime.Scoped));
         }
     }
 }

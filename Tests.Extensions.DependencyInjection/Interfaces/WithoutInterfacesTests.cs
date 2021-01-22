@@ -18,26 +18,26 @@ namespace Tests.Extensions.DependencyInjection.Interfaces
                 .Implementing<IShippingEngine>()
                 .WithoutInterfaces()
                 .AsTransient()
-                .ConfigureOrThrow()
+                .Configure()
             );
         }
 
         [Fact]
         public void Interfaces_WithoutInterface_BaseContract()
         {
-            Assert.Throws<AssertResolutionException>(() => this.Provider.AssertResolution<IEngine>());
+            Assert.Throws<AssertResolutionException>(() => this.ServiceProvider.AssertResolution<IEngine>());
         }
 
         [Fact]
         public void Interfaces_WithoutInterface_Contract()
         {
-            Assert.Throws<AssertResolutionException>(() => this.Provider.AssertResolution<IShippingEngine>());
+            Assert.Throws<AssertResolutionException>(() => this.ServiceProvider.AssertResolution<IShippingEngine>());
         }
 
         [Fact]
         public void InterfaceS_WithoutInterface_ConcreteClass()
         {
-            this.Provider.AssertResolution<ShippingEngine>();
+            this.ServiceProvider.AssertResolution<ShippingEngine>();
         }
     }
 }

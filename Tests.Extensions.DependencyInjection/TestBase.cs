@@ -22,7 +22,7 @@ namespace Tests.Extensions.DependencyInjection
         /// <summary>
         /// Configured service provider.
         /// </summary>
-        protected IServiceProvider Provider 
+        protected IServiceProvider ServiceProvider 
         {
             get { return _serviceProvider ??= this.ServiceCollection.BuildServiceProvider(); }
         }

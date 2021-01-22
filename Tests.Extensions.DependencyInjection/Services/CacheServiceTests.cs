@@ -21,7 +21,7 @@ namespace Tests.Extensions.DependencyInjection.Services
                 .Implementing<ICacheService>()
                 .OnlyInterface<ICacheService>()
                 .AsSingleton()
-                .ConfigureOrThrow()
+                .Configure()
             );
         }
 
@@ -30,7 +30,7 @@ namespace Tests.Extensions.DependencyInjection.Services
             this.Cache.Add(KEY, Customer.Samples);
         }
 
-        private ICacheService Cache => this.Provider.GetRequiredService<ICacheService>();
+        private ICacheService Cache => this.ServiceProvider.GetRequiredService<ICacheService>();
 
         [Fact]
         public void Samples_CacheService_GetValue()

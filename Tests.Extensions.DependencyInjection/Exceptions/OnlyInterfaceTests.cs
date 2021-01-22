@@ -6,9 +6,9 @@ using Tests.Extensions.DependencyInjection.Samples.Contracts;
 using Tests.Extensions.DependencyInjection.Samples.Engines.Contracts;
 using Xunit;
 
-namespace Tests.Extensions.DependencyInjection.ImplementationType
+namespace Tests.Extensions.DependencyInjection.Exceptions
 {
-    public class OnlyInterfaceExceptionTests : TestBase
+    public class OnlyInterfaceTests : TestBase
     {
         private Exception _exception;
 

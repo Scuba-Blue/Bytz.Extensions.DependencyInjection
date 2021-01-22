@@ -4,38 +4,40 @@ using Tests.Extensions.DependencyInjection.Samples.Contracts;
 using Tests.Extensions.DependencyInjection.Samples.Engines.Contracts;
 using Xunit;
 
-namespace Tests.Extensions.DependencyInjection.Lifetimes
+namespace Tests.Extensions.DependencyInjection.Exceptions
 {
-    public class TransientTests : TestBase
+    public class AssertCountExceptionTests : TestBase
     {
         protected override void OnRegister(IServiceCollection services)
         {
             services.Register
             (r => r
                 .InAssemblyOf<IEngine>()
-                .Implementing<IShippingEngine>()
+                .Implementing<IEngine>()
                 .AllInterfaces()
                 .AsTransient()
                 .Configure()
             );
         }
 
+        private interface ISee { }
+
         [Fact]
-        public void Lifetime_Transient_GetInstanceByContract()
+        public void Exceptions_Count_UnregisteredInterface()
         {
-            this.ServiceProvider.AssertResolution<IShippingEngine>();
+            this.ServiceProvider.AssertCount<ISee>(0);
         }
 
         [Fact]
-        public void Lifetime_Transient_GetInstanceByBaseContract()
+        public void Exceptions_Count_SpecificInterface()
         {
-            this.ServiceProvider.AssertResolution<IEngine>();
+            this.ServiceProvider.AssertCount<IShippingEngine>(1);
         }
 
         [Fact]
-        public void Lifetime_Transient_AssertLifetime()
+        public void Exceptions_Count_BaseInterface()
         {
-            this.ServiceCollection.AssertLifetime<IShippingEngine>(ServiceLifetime.Transient);
+            this.ServiceProvider.AssertCount<IEngine>(2);
         }
     }
 }

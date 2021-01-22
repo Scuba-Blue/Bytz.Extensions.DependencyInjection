@@ -23,7 +23,7 @@ namespace Tests.Extensions.DependencyInjection.Samples.Injection
                 .Implementing<IEngine>()
                 .AllInterfaces()
                 .AsTransient()
-                .ConfigureOrThrow())
+                .Configure())
             ;
         }
 
@@ -40,7 +40,7 @@ namespace Tests.Extensions.DependencyInjection.Samples.Injection
                 .Implementing<IService>()
                 .AllInterfaces()
                 .AsTransient()
-                .ConfigureOrThrow())
+                .Configure())
             ;
         }
 
@@ -57,7 +57,7 @@ namespace Tests.Extensions.DependencyInjection.Samples.Injection
                 .Implementing<IRepository>()
                 .AllInterfaces()
                 .AsTransient()
-                .ConfigureOrThrow())
+                .Configure())
             ;
         }
 
@@ -74,7 +74,7 @@ namespace Tests.Extensions.DependencyInjection.Samples.Injection
                 .Implementing<ICacheService>()
                 .OnlyInterface<ICacheService>()
                 .AsSingleton()
-                .ConfigureOrThrow()
+                .Configure()
             );
         }
     }

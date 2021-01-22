@@ -17,14 +17,14 @@ namespace Tests.Extensions.DependencyInjection.ImplementationType
                 .BasedOn(typeof(EngineBase))
                 .AllInterfaces()
                 .AsTransient()
-                .ConfigureOrThrow()
+                .Configure()
             );
         }
 
         [Fact]
         public void Type_BasedOnType_GetInstanceByContract()
         {
-            this.Provider.AssertResolution<IShippingEngine>();
+            this.ServiceProvider.AssertResolution<IShippingEngine>();
         }
     }
 }

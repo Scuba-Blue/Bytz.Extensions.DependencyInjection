@@ -7,7 +7,7 @@ using Xunit;
 
 namespace Tests.Extensions.DependencyInjection.ImplementationType
 {
-    public class OnlyInterfaceTests: TestBase
+    public class OnlyInterfaceTests: TestBase<ITaxEngine>
     {
         protected override void OnRegister(IServiceCollection services)
         {
@@ -17,22 +17,20 @@ namespace Tests.Extensions.DependencyInjection.ImplementationType
                     .Implementing<ITaxEngine>()
                     .OnlyInterface<ITaxEngine>()
                     .AsTransient()
-                    .ConfigureOrThrow()
+                    .Configure()
                 );
         }
-
-        private ITaxEngine Service => this.Provider.GetRequiredService<ITaxEngine>();
 
         [Fact]
         public void Type_OnlyInterface_BaseContract()
         {
-            Assert.Throws<AssertResolutionException>(() => this.Provider.AssertResolution<IEngine>());
+            Assert.Throws<AssertResolutionException>(() => this.ServiceProvider.AssertResolution<IEngine>());
         }
 
         [Fact]
         public void Type_OnlyInterface_SpecificContract()
         {
-            this.Provider.AssertResolution<ITaxEngine>();
+            this.ServiceProvider.AssertResolution<ITaxEngine>();
         }
     }
 }
