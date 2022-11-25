@@ -4,16 +4,16 @@ using Tests.Extensions.DependencyInjection.Samples.Contracts;
 using Tests.Extensions.DependencyInjection.Samples.Engines.Contracts;
 using Xunit;
 
-namespace Tests.Extensions.DependencyInjection.ImplementationType
+namespace Tests.Extensions.DependencyInjection.InAssembly
 {
-    public class ImplementingTests : TestBase
+    public class InAssemblyTests : TestBase
     {
         protected override void OnRegister(IServiceCollection services)
         {
             services.Register
             (r => r
                 .InAssemblyOf<IEngine>()
-                .Implementing<ITaxEngine>()
+                .Implementing<IShippingEngine>()
                 .AllInterfaces()
                 .AsTransient()
                 .Configure()
@@ -21,13 +21,13 @@ namespace Tests.Extensions.DependencyInjection.ImplementationType
         }
 
         [Fact]
-        public void Type_Implementing_GetInstanceByContract()
+        public void InAssemblyOf_T_GetInstanceByContract()
         {
-            this.ServiceProvider.AssertResolution<ITaxEngine>();
+            this.ServiceProvider.AssertResolution<IShippingEngine>();
         }
-
+        
         [Fact]
-        public void Type_Implementing_GetInstanceByBaseContract()
+        public void InAssemblyOf_T_GetInstanceByBaseContract()
         {
             this.ServiceProvider.AssertResolution<IEngine>();
         }
