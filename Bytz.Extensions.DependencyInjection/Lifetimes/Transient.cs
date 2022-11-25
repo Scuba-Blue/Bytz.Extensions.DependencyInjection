@@ -6,7 +6,7 @@ namespace Bytz.Extensions.DependencyInjection.Lifetimes
     /// 
     /// </summary>
     internal class Transient
-    : _Lifetime
+    : LifetimeBase
     {
         /// <summary>
         /// 

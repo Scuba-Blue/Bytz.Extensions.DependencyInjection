@@ -7,7 +7,7 @@ namespace Bytz.Extensions.DependencyInjection.Contracts
     /// Register only as the specified contract.
     /// </summary>
     internal class OnlyContract
-    : _Contract
+    : ContractBase
     {
         /// <summary>
         /// Only the specific contract interface.

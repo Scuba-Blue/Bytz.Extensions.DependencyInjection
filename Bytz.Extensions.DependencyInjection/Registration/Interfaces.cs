@@ -3,7 +3,7 @@ using Bytz.Extensions.DependencyInjection.Exceptions;
 
 namespace Bytz.Extensions.DependencyInjection.Configuration
 {
-    internal partial class Registrar
+    internal partial class RegistrarBase
     : IImplementing
     {
         public ILifetime AllInterfaces()

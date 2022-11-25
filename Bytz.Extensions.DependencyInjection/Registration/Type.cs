@@ -7,7 +7,7 @@ namespace Bytz.Extensions.DependencyInjection.Configuration
     /// <summary>
     /// Partial implementation of the registrar.
     /// </summary>
-    internal partial class Registrar : IType
+    internal partial class RegistrarBase : IType
     {
         public IImplementing BasedOn<TClass>
         () 
@@ -46,7 +46,7 @@ namespace Bytz.Extensions.DependencyInjection.Configuration
         /// <typeparam name="TClass">Type of class for the implementation.</typeparam>
         private void SetType<TType, TClass>
         ()
-        where TType : _ImplementationType
+        where TType : ImplementationTypeBase
         where TClass : class
         {
             _basedOn = (TType)Activator.CreateInstance

@@ -6,7 +6,7 @@ namespace Bytz.Extensions.DependencyInjection.Implementation
     /// 
     /// </summary>
     internal class BasedOn
-    : _ImplementationType
+    : ImplementationTypeBase
     {
         public BasedOn
         (

@@ -6,7 +6,7 @@ namespace Bytz.Extensions.DependencyInjection.Lifetimes
     /// 
     /// </summary>
     internal class Singleton
-    : _Lifetime
+    : LifetimeBase
     {
         /// <summary>
         /// 

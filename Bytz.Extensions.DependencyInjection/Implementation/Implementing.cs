@@ -6,7 +6,7 @@ namespace Bytz.Extensions.DependencyInjection.Implementation
     /// Register classes implementing a specific interface type.
     /// </summary>
     internal class Implementing
-    : _ImplementationType
+    : ImplementationTypeBase
     {
         /// <summary>
         /// Register classes implementing a specific interface.

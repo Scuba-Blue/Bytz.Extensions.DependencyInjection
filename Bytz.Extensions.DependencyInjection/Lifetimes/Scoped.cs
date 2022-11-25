@@ -6,7 +6,7 @@ namespace Bytz.Extensions.DependencyInjection.Lifetimes
     /// Register with a scoped lifetime.
     /// </summary>
     internal class Scoped
-    : _Lifetime
+    : LifetimeBase
     {
         /// <summary>
         /// Add an implementation type with a specific interface.

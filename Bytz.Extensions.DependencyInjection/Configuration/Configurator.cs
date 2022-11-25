@@ -23,8 +23,8 @@ namespace Bytz.Extensions.DependencyInjection
         (
             IServiceCollection services,
             List<Type> implementations,
-            _Contract contracts,
-            _Lifetime lifetimes
+            ContractBase contracts,
+            LifetimeBase lifetimes
         )
         {
             implementations
@@ -45,8 +45,8 @@ namespace Bytz.Extensions.DependencyInjection
         (
             IServiceCollection services, 
             Type implementationType, 
-            _Contract contracts, 
-            _Lifetime lifetimes
+            ContractBase contracts, 
+            LifetimeBase lifetimes
         )
         {
             ConfigureImplementation(services, implementationType, lifetimes);
@@ -66,7 +66,7 @@ namespace Bytz.Extensions.DependencyInjection
         (
             IServiceCollection services, 
             Type implementationType,
-            _Lifetime lifetime
+            LifetimeBase lifetime
         )
         {
             ConfigureImplementation(services, implementationType, lifetime as Transient);
@@ -134,7 +134,7 @@ namespace Bytz.Extensions.DependencyInjection
             IServiceCollection services, 
             Type implementationType, 
             AllContracts interfaces, 
-            _Lifetime lifetime)
+            LifetimeBase lifetime)
         {
             if (interfaces != null)
             {
@@ -160,7 +160,7 @@ namespace Bytz.Extensions.DependencyInjection
             IServiceCollection services, 
             Type implementationType, 
             Type contractType, 
-            _Lifetime lifetime
+            LifetimeBase lifetime
         )
         {
             Configure(services, implementationType, contractType, lifetime as Transient);
@@ -235,7 +235,7 @@ namespace Bytz.Extensions.DependencyInjection
             IServiceCollection services, 
             Type implementationType, 
             OnlyContract contracts, 
-            _Lifetime lifetime
+            LifetimeBase lifetime
         )
         {
             if (contracts != null)
@@ -258,7 +258,7 @@ namespace Bytz.Extensions.DependencyInjection
             IServiceCollection services, 
             Type implementationType, 
             NoInterfaces contract, 
-            _Lifetime lifetime
+            LifetimeBase lifetime
         )
         {
             if (contract != null)
@@ -277,7 +277,7 @@ namespace Bytz.Extensions.DependencyInjection
         (
             IServiceCollection services, 
             Type implementationType, 
-            _Lifetime lifetime
+            LifetimeBase lifetime
         )
         {
             Configure(services, implementationType, lifetime as Transient);

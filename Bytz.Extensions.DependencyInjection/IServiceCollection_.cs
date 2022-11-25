@@ -24,7 +24,7 @@ namespace Bytz.Extensions.DependencyInjection
             Action<IAssembly> setup
         )
         {
-            setup.Invoke(Registrar.Configure(services));
+            setup.Invoke(RegistrarBase.Configure(services));
 
             return services;
         }

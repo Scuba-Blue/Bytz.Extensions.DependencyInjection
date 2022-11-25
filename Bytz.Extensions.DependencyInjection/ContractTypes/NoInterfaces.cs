@@ -4,6 +4,6 @@
     /// Register no contracts, register only the class as itself.
     /// </summary>
     internal class NoInterfaces
-    : _Contract
+    : ContractBase
     { }
 }

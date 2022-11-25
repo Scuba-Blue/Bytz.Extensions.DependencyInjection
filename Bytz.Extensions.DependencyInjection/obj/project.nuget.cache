@@ -1,0 +1,11 @@
+{
+  "version": 2,
+  "dgSpecHash": "NmyQDprRZ91XVEXn1O30TS2ZZWpcO9LX7zZi7wlUoBRsxCn8okwdlVqs/3QE9tmKCZx2sh/iJZEx9UHfB4/p7A==",
+  "success": true,
+  "projectFilePath": "C:\\Development\\~Github\\Bytz.Extensions.DependencyInjection\\Bytz.Extensions.DependencyInjection.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\mdbowan\\.nuget\\packages\\microsoft.extensions.dependencyinjection\\7.0.0\\microsoft.extensions.dependencyinjection.7.0.0.nupkg.sha512",
+    "C:\\Users\\mdbowan\\.nuget\\packages\\microsoft.extensions.dependencyinjection.abstractions\\7.0.0\\microsoft.extensions.dependencyinjection.abstractions.7.0.0.nupkg.sha512"
+  ],
+  "logs": []
+}

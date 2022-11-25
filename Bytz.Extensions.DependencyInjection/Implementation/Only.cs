@@ -6,7 +6,7 @@ namespace Bytz.Extensions.DependencyInjection.Implementation
     /// Register classes 
     /// </summary>
     internal class Only
-    : _ImplementationType
+    : ImplementationTypeBase
     {
         /// <summary>
         /// Register only the specified type.

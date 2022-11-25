@@ -3,7 +3,7 @@ using Bytz.Extensions.DependencyInjection.Lifetimes;
 
 namespace Bytz.Extensions.DependencyInjection.Configuration
 {
-    internal partial class Registrar
+    internal partial class RegistrarBase
     : ILifetime
     {
         public IConfigure AsSingleton()

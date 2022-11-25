@@ -1,16 +1,17 @@
-﻿
+﻿using System;
+
 namespace Bytz.Extensions.DependencyInjection.Exceptions
 {
     /// <summary>
-    /// thrown when the configuration finds no types.
+    /// basis for bytz exceptions.
     /// </summary>
-    public class NoTypesException : BytzExceptionBase
+    public abstract class BytzExceptionBase : Exception
     {
         /// <summary>
         /// must be constructed with a message.
         /// </summary>
         /// <param name="message">exception message.</param>
-        public NoTypesException(string message)
+        public BytzExceptionBase(string message)
         : base(message)
         { }
     }

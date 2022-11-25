@@ -4,6 +4,6 @@
     /// Register all class contracts.
     /// </summary>
     internal class AllContracts
-    : _Contract
+    : ContractBase
     { }
 }

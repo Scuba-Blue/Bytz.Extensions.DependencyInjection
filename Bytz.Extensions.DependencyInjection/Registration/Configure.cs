@@ -9,7 +9,7 @@ using System.Text;
 
 namespace Bytz.Extensions.DependencyInjection.Configuration
 {
-    internal partial class Registrar
+    internal partial class RegistrarBase
     : IConfigure
     {
         /// <summary>
@@ -36,7 +36,7 @@ namespace Bytz.Extensions.DependencyInjection.Configuration
         /// </summary>
         /// <param name="types">List of types.</param>
         /// <param name="onlyContract"></param>
-        private void AssertOnlyContracts(List<Type> types, OnlyContract onlyContract)
+        private void AssertOnlyContracts(IList<Type> types, OnlyContract onlyContract)
         {
             Type type = onlyContract?.Interface;
 
@@ -104,7 +104,7 @@ namespace Bytz.Extensions.DependencyInjection.Configuration
         private List<Type> SelectTypes
         (
             Assembly assembly,
-            _ImplementationType implementationType
+            ImplementationTypeBase implementationType
         )
         {
             return GetTypesImplementing
@@ -148,7 +148,7 @@ namespace Bytz.Extensions.DependencyInjection.Configuration
         private List<Type> GetTypesImplementing
         (
             List<Type> types,
-            _ImplementationType implementationType
+            ImplementationTypeBase implementationType
         )
         {
             List<Type> selected = null;
