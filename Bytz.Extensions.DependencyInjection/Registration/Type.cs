@@ -10,7 +10,7 @@ namespace Bytz.Extensions.DependencyInjection.Configuration
     internal partial class RegistrarBase : IType
     {
         public IImplementing BasedOn<TClass>
-        () 
+        ()
         where TClass : class
         {
             AssertNotString<TClass>();
@@ -61,16 +61,16 @@ namespace Bytz.Extensions.DependencyInjection.Configuration
             Type type
         )
         {
-            AssertNotString(type); 
+            AssertNotString(type);
 
             _basedOn = (BasedOn)Activator.CreateInstance
             (
-                typeof(BasedOn), 
-                new[] 
-                { 
+                typeof(BasedOn),
+                new[]
+                {
                     type.IsGenericType == true
                     ? type.GetGenericTypeDefinition()
-                    : type 
+                    : type
                 }
             );
 

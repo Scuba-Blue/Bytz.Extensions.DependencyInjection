@@ -24,9 +24,9 @@ namespace Bytz.Extensions.DependencyInjection.Configuration
             (new Configurator())
                 .Configure
                 (
-                    _services, 
-                    types, 
-                    _interfaces, 
+                    _services,
+                    types,
+                    _interfaces,
                     _lifetime
                 );
         }
@@ -157,7 +157,7 @@ namespace Bytz.Extensions.DependencyInjection.Configuration
             selected ??= SelectTypes(types, implementationType as Implementing);
             selected ??= SelectTypes(types, implementationType as Only);
 
-            return selected;            
+            return selected;
         }
 
         /// <summary>
@@ -172,14 +172,14 @@ namespace Bytz.Extensions.DependencyInjection.Configuration
             BasedOn basedOn
         )
         {
-            return 
-                basedOn == null 
-                ? null 
+            return
+                basedOn == null
+                ? null
                 : types
                 .Where
-                (t => 
+                (t =>
                     t.IsAbstract == false
-                    && t.IsGenericType == false 
+                    && t.IsGenericType == false
                     && DerivesFrom(t, basedOn.Type) == true
                 )
                 .ToList();
@@ -194,7 +194,7 @@ namespace Bytz.Extensions.DependencyInjection.Configuration
         /// TODO:    test for IsSubClassOf
         private bool DerivesFrom
         (
-            Type source, 
+            Type source,
             Type derivesFrom
         )
         {
@@ -203,7 +203,7 @@ namespace Bytz.Extensions.DependencyInjection.Configuration
             while (source != null && source != typeof(object))
             {
                 Type current = source.IsGenericType == true
-                    ? source.GetGenericTypeDefinition() 
+                    ? source.GetGenericTypeDefinition()
                     : source;
 
                 if (current == derivesFrom)
@@ -230,9 +230,9 @@ namespace Bytz.Extensions.DependencyInjection.Configuration
             Implementing implementing
         )
         {
-            return 
-                implementing == null 
-                ? null 
+            return
+                implementing == null
+                ? null
                 : types
                     .Where(t => implementing.Type.IsAssignableFrom(t) == true)
                     .ToList();
@@ -250,9 +250,9 @@ namespace Bytz.Extensions.DependencyInjection.Configuration
             Only only
         )
         {
-            return 
-                only == null 
-                ? null 
+            return
+                only == null
+                ? null
                 : types
                     .Where(t => t == only.Type)
                     .ToList();

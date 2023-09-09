@@ -18,7 +18,7 @@ namespace Bytz.Extensions.DependencyInjection.Implementation
             Type type
         )
         : base(type)
-        { 
+        {
             if (type.IsInterface == false)
             {
                 throw new ArgumentException($"Type parameter must be an interface type.");

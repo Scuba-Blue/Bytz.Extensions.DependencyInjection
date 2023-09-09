@@ -13,7 +13,7 @@ namespace Bytz.Extensions.DependencyInjection.Contracts
         /// </summary>
         /// <typeparam name="TBase">Specific base type.</typeparam>
         /// <returns>Lifetime instance implementing an IImplementing.</returns>
-        IImplementing BasedOn<TBase>() 
+        IImplementing BasedOn<TBase>()
             where TBase : class;
 
         /// <summary>
@@ -31,7 +31,7 @@ namespace Bytz.Extensions.DependencyInjection.Contracts
         /// </summary>
         /// <typeparam name="TInterface">Specific interface.</typeparam>
         /// <returns>Lifetime instance implementing an IImplementing.</returns>
-        IImplementing Implementing<TInterface>() 
+        IImplementing Implementing<TInterface>()
             where TInterface : class;
 
         /// <summary>
@@ -39,7 +39,7 @@ namespace Bytz.Extensions.DependencyInjection.Contracts
         /// </summary>
         /// <typeparam name="TType">Specific class.</typeparam>
         /// <returns>Lifetime instance implementing an IImplementing contract.</returns>
-        IImplementing Only<TType>() 
+        IImplementing Only<TType>()
             where TType : class;
     }
 }

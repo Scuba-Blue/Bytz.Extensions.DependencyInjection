@@ -16,7 +16,7 @@ namespace Bytz.Extensions.DependencyInjection.Configuration
 
         private Assembly _assembly = null;
         private ImplementationTypeBase _basedOn = null;
-        private ContractBase _interfaces = null; 
+        private ContractBase _interfaces = null;
         private LifetimeBase _lifetime = null;
 
         private RegistrarBase()

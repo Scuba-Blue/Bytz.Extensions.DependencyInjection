@@ -1,6 +1,4 @@
-﻿using System;
-
-namespace Bytz.Extensions.DependencyInjection.Exceptions
+﻿namespace Bytz.Extensions.DependencyInjection.Exceptions
 {
     /// <summary>
     /// thrown when types registered to only an interface cannot be cast.

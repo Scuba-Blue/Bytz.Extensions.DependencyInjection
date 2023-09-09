@@ -27,7 +27,7 @@ namespace Bytz.Extensions.DependencyInjection.Configuration
         /// Assert that TInterface is actually an interface.
         /// </summary>
         /// <typeparam name="TInterface">Type to be asserted is a genuine interface.</typeparam>
-        private void AssertInterface<TInterface>() 
+        private void AssertInterface<TInterface>()
         where TInterface : class
         {
             if (typeof(TInterface).IsInterface == false)

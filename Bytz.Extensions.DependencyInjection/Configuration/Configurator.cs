@@ -43,9 +43,9 @@ namespace Bytz.Extensions.DependencyInjection
         /// <param name="lifetimes">Various lifetimes.</param>
         private void Configure
         (
-            IServiceCollection services, 
-            Type implementationType, 
-            ContractBase contracts, 
+            IServiceCollection services,
+            Type implementationType,
+            ContractBase contracts,
             LifetimeBase lifetimes
         )
         {
@@ -64,7 +64,7 @@ namespace Bytz.Extensions.DependencyInjection
         /// <param name="lifetime">Various lifetimes.</param>
         private void ConfigureImplementation
         (
-            IServiceCollection services, 
+            IServiceCollection services,
             Type implementationType,
             LifetimeBase lifetime
         )
@@ -131,9 +131,9 @@ namespace Bytz.Extensions.DependencyInjection
         /// <param name="lifetime">Various lifetimes.</param>
         private void Configure
         (
-            IServiceCollection services, 
-            Type implementationType, 
-            AllContracts interfaces, 
+            IServiceCollection services,
+            Type implementationType,
+            AllContracts interfaces,
             LifetimeBase lifetime)
         {
             if (interfaces != null)
@@ -157,9 +157,9 @@ namespace Bytz.Extensions.DependencyInjection
         /// <param name="lifetime">Various lifetimes.</param>
         private void Configure
         (
-            IServiceCollection services, 
-            Type implementationType, 
-            Type contractType, 
+            IServiceCollection services,
+            Type implementationType,
+            Type contractType,
             LifetimeBase lifetime
         )
         {
@@ -177,9 +177,9 @@ namespace Bytz.Extensions.DependencyInjection
         /// <param name="lifetime">Transient lifetime.</param>
         private void Configure
         (
-            IServiceCollection services, 
-            Type implementationType, 
-            Type contractType, 
+            IServiceCollection services,
+            Type implementationType,
+            Type contractType,
             Transient lifetime
         )
         {
@@ -195,9 +195,9 @@ namespace Bytz.Extensions.DependencyInjection
         /// <param name="lifetime">Scoped lifetime.</param>
         private void Configure
         (
-            IServiceCollection services, 
-            Type implementationType, 
-            Type contractType, 
+            IServiceCollection services,
+            Type implementationType,
+            Type contractType,
             Scoped lifetime
         )
         {
@@ -213,9 +213,9 @@ namespace Bytz.Extensions.DependencyInjection
         /// <param name="lifetime">Singleton lifetime.</param>
         private void Configure
         (
-            IServiceCollection services, 
-            Type implementationType, 
-            Type contractType, 
+            IServiceCollection services,
+            Type implementationType,
+            Type contractType,
             Singleton lifetime
         )
         {
@@ -232,9 +232,9 @@ namespace Bytz.Extensions.DependencyInjection
 
         private void Configure
         (
-            IServiceCollection services, 
-            Type implementationType, 
-            OnlyContract contracts, 
+            IServiceCollection services,
+            Type implementationType,
+            OnlyContract contracts,
             LifetimeBase lifetime
         )
         {
@@ -255,9 +255,9 @@ namespace Bytz.Extensions.DependencyInjection
         /// <param name="lifetime"></param>
         private void Configure
         (
-            IServiceCollection services, 
-            Type implementationType, 
-            NoInterfaces contract, 
+            IServiceCollection services,
+            Type implementationType,
+            NoInterfaces contract,
             LifetimeBase lifetime
         )
         {
@@ -275,8 +275,8 @@ namespace Bytz.Extensions.DependencyInjection
         /// <param name="lifetime">various lifetimes.</param>
         private void Configure
         (
-            IServiceCollection services, 
-            Type implementationType, 
+            IServiceCollection services,
+            Type implementationType,
             LifetimeBase lifetime
         )
         {
@@ -293,8 +293,8 @@ namespace Bytz.Extensions.DependencyInjection
         /// <param name="lifetime">Transient lifetime.</param>
         private void Configure
         (
-            IServiceCollection services, 
-            Type implementationType, 
+            IServiceCollection services,
+            Type implementationType,
             Transient lifetime
         )
         {
@@ -309,8 +309,8 @@ namespace Bytz.Extensions.DependencyInjection
         /// <param name="lifetime">Scoped lifetime.</param>
         private void Configure
         (
-            IServiceCollection services, 
-            Type implementationType, 
+            IServiceCollection services,
+            Type implementationType,
             Scoped lifetime
         )
         {
@@ -325,8 +325,8 @@ namespace Bytz.Extensions.DependencyInjection
         /// <param name="lifetime">Singleton lifetime.</param>
         private void ConfigureImplementation
         (
-            IServiceCollection services, 
-            Type implementationType, 
+            IServiceCollection services,
+            Type implementationType,
             Singleton lifetime
         )
         {

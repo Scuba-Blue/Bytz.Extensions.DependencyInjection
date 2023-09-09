@@ -17,7 +17,7 @@
         /// </summary>
         /// <typeparam name="TInterface">Specific interface to register implementation.</typeparam>
         /// <returns>Lifetime instance implementing an ILifetime.</returns>
-        ILifetime OnlyInterface<TInterface>() 
+        ILifetime OnlyInterface<TInterface>()
             where TInterface : class;
 
         /// <summary>

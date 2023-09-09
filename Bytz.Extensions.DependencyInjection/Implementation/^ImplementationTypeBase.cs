@@ -21,7 +21,7 @@ namespace Bytz.Extensions.DependencyInjection.Implementation
             Type type
         )
         {
-            this.Type = type; 
+            this.Type = type;
         }
     }
 }
