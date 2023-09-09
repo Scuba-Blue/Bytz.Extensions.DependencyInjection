@@ -243,7 +243,8 @@ namespace Bytz.Extensions.DependencyInjection.Configuration
         /// </summary>
         /// <param name="types">List of instantiable types.</param>
         /// <param name="only">Specific type to select.</param>
-        /// <returns>The specified type from the list of instantiable types.</returns>
+        /// <returns>The specified type from the list of instantiable types</returns>
+        /// <remarks></remarks>
         private List<Type> SelectTypes
         (
             List<Type> types,
