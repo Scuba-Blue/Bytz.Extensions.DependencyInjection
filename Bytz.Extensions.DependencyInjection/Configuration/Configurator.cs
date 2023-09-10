@@ -1,4 +1,5 @@
 ﻿using Bytz.Extensions.DependencyInjection.Contracts;
+using Bytz.Extensions.DependencyInjection.ContractTypes.Basis;
 using Bytz.Extensions.DependencyInjection.Lifetimes;
 using Microsoft.Extensions.DependencyInjection;
 using System;

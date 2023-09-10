@@ -1,4 +1,6 @@
-﻿namespace Bytz.Extensions.DependencyInjection.Contracts
+﻿using Bytz.Extensions.DependencyInjection.ContractTypes.Basis;
+
+namespace Bytz.Extensions.DependencyInjection.Contracts
 {
     /// <summary>
     /// Register all class contracts.

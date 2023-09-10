@@ -1,4 +1,5 @@
-﻿using Bytz.Extensions.DependencyInjection.Exceptions;
+﻿using Bytz.Extensions.DependencyInjection.ContractTypes.Basis;
+using Bytz.Extensions.DependencyInjection.Exceptions;
 using System;
 
 namespace Bytz.Extensions.DependencyInjection.Contracts
