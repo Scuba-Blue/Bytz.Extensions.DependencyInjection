@@ -1,4 +1,4 @@
-﻿namespace Bytz.Extensions.DependencyInjection.Contracts
+﻿namespace Bytz.Extensions.DependencyInjection.ContractTypes.Basis
 {
     /// <summary>
     /// base for all contract configurations.
