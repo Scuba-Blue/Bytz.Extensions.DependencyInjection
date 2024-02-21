@@ -1,52 +1,51 @@
 ﻿using Bytz.Extensions.DependencyInjection;
+using Examples.Extensions.DependencyInjection.Contracts;
+using Examples.Extensions.DependencyInjection.Domain.Customers;
+using Examples.Extensions.DependencyInjection.Services.Contracts;
 using Microsoft.Extensions.DependencyInjection;
 using System.Collections.Generic;
 using System.Linq;
-using Tests.Extensions.DependencyInjection.Samples.Contracts;
-using Tests.Extensions.DependencyInjection.Samples.Domain.Customers;
-using Tests.Extensions.DependencyInjection.Samples.Services.Contracts;
 using Xunit;
 
-namespace Tests.Extensions.DependencyInjection.Services
+namespace Tests.Extensions.DependencyInjection.Services;
+
+public class CacheServiceTests : TestBase
 {
-    public class CacheServiceTests : TestBase
+    const string KEY = "Customers";
+
+    protected override void OnRegister(IServiceCollection services)
     {
-        const string KEY = "Customers";
+        services.Register
+        (r => r
+            .InAssemblyOf<IEngine>()
+            .Implementing<ICacheService>()
+            .OnlyInterface<ICacheService>()
+            .AsSingleton()
+            .Configure()
+        );
+    }
 
-        protected override void OnRegister(IServiceCollection services)
-        {
-            services.Register
-            (r => r
-                .InAssemblyOf<IEngine>()
-                .Implementing<ICacheService>()
-                .OnlyInterface<ICacheService>()
-                .AsSingleton()
-                .Configure()
-            );
-        }
+    protected override void OnConfigure()
+    {
+        this.Cache.Add(KEY, Customer.Samples);
+    }
 
-        protected override void OnConfigure()
-        {
-            this.Cache.Add(KEY, Customer.Samples);
-        }
+    private ICacheService Cache => this.ServiceProvider.GetRequiredService<ICacheService>();
 
-        private ICacheService Cache => this.ServiceProvider.GetRequiredService<ICacheService>();
+    [Fact]
+    public void Samples_CacheService_GetValue()
+    {
+        var value = this.Cache.Get<IEnumerable<Customer>>(KEY);
 
-        [Fact]
-        public void Samples_CacheService_GetValue()
-        {
-            var value = this.Cache.Get<IEnumerable<Customer>>(KEY);
+        Assert.NotNull(value);
+        Assert.Equal(5, value.Count());
+    }
 
-            Assert.NotNull(value);
-            Assert.Equal(5, value.Count());
-        }
+    [Fact]
+    public void Samples_CacheService_NonExistentValue()
+    {
+        var value = this.Cache.Get<string>("dummy");
 
-        [Fact]
-        public void Samples_CacheService_NonExistentValue()
-        {
-            var value = this.Cache.Get<string>("dummy");
-
-            Assert.Null(value);
-        }
+        Assert.Null(value);
     }
 }

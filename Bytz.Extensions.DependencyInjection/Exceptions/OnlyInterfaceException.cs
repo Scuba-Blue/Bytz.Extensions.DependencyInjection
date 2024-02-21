@@ -1,20 +1,19 @@
-﻿namespace Bytz.Extensions.DependencyInjection.Exceptions
+﻿namespace Bytz.Extensions.DependencyInjection.Exceptions;
+
+/// <summary>
+/// thrown when types registered to only an interface cannot be cast.
+/// </summary>
+public class OnlyInterfaceException
+: BytzExceptionBase
 {
     /// <summary>
-    /// thrown when types registered to only an interface cannot be cast.
+    /// create with a message.
     /// </summary>
-    public class OnlyInterfaceException
-    : BytzExceptionBase
-    {
-        /// <summary>
-        /// create with a message.
-        /// </summary>
-        /// <param name="message"></param>
-        public OnlyInterfaceException
-        (
-            string message
-        )
-        : base(message)
-        { }
-    }
+    /// <param name="message"></param>
+    public OnlyInterfaceException
+    (
+        string message
+    )
+    : base(message)
+    { }
 }

@@ -1,13 +1,12 @@
-﻿namespace Bytz.Extensions.DependencyInjection.Contracts
+﻿namespace Bytz.Extensions.DependencyInjection.Contracts;
+
+/// <summary>
+/// Marker contract. 
+/// </summary>
+public interface IBytz
 {
     /// <summary>
-    /// Marker contract. 
+    /// Copyright.
     /// </summary>
-    public interface IBytz
-    {
-        /// <summary>
-        /// Copyright.
-        /// </summary>
-        sealed string Copyright => "© 2021 - M. Douglas Bowan II";
-    }
+    public static sealed string Copyright => "© 2024 - M. Douglas Bowan II";
 }
