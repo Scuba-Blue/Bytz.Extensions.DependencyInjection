@@ -15,6 +15,10 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="Examples.Extensions.DependencyInjection.csproj.vspscc" />
+  </ItemGroup>
+
+  <ItemGroup>
     <ProjectReference Include="..\Bytz.Extensions.DependencyInjection\Bytz.Extensions.DependencyInjection.csproj" />
   </ItemGroup>
 
