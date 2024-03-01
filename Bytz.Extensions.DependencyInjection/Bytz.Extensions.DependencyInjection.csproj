@@ -20,7 +20,7 @@
 * added functionality for having common registeries in order to share configurations.  
   (initially for unit-testing purposes)
 	    </PackageReleaseNotes>
-	    <VersionPrefix>3.0.0</VersionPrefix>
+	    <VersionPrefix>3.0.2</VersionPrefix>
 	    <PackageRequireLicenseAcceptance>True</PackageRequireLicenseAcceptance>
 	    <GeneratePackageOnBuild>True</GeneratePackageOnBuild>
 	    <Description>Allow fluent registration of components with IServiceCollection</Description>

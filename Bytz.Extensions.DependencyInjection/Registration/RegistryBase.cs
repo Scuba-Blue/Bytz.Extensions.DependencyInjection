@@ -4,7 +4,8 @@ namespace Bytz.Extensions.DependencyInjection.Registration;
 
 /// <summary>
 /// basis for a shared registry to be used by
-/// both applications and testing.
+/// both applications and testing in order to 
+/// allow .
 /// </summary>
 public abstract class RegistryBase
 {
@@ -12,7 +13,7 @@ public abstract class RegistryBase
     /// registry method that is implemented for an application.
     /// </summary>
     /// <param name="services">service collection instance.</param>
-    public abstract void OnRegister(IServiceCollection services);
+    protected abstract void OnRegister(IServiceCollection services);
 
     /// <summary>
     /// common register method to be invoked from a given test / application.

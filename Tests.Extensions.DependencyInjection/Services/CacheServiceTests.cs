@@ -9,6 +9,10 @@ using Xunit;
 
 namespace Tests.Extensions.DependencyInjection.Services;
 
+/// <summary>
+/// example of an implemented, singleton object cache
+/// and retrieving values from
+/// </summary>
 public class CacheServiceTests : TestBase
 {
     const string KEY = "Customers";

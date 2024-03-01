@@ -15,7 +15,10 @@ public static class IServiceProviderExtensions
     /// </summary>
     /// <typeparam name="TService">Type of service for the components.</typeparam>
     /// <param name="provider">An instance implementing IServiceProvider</param>
-    public static void AssertResolution<TService>(this IServiceProvider provider)
+    public static void AssertResolution<TService>
+    (
+        this IServiceProvider provider
+    )
     where TService : class
     {
         if (provider.GetService<TService>() == null)
@@ -30,7 +33,11 @@ public static class IServiceProviderExtensions
     /// <typeparam name="TService">Type of service for the components.</typeparam>
     /// <param name="provider">An instance implementing IServiceProvider.</param>
     /// <param name="expected">The expected count of resolved components.</param>
-    public static void AssertCount<TService>(this IServiceProvider provider, int expected)
+    public static void AssertCount<TService>
+    (
+        this IServiceProvider provider,
+        int expected
+    )
     {
         int actual = provider.GetServices<TService>()?.Count() ?? 0;
 

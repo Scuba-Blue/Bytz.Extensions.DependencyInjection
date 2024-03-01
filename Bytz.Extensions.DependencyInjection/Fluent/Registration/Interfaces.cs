@@ -9,7 +9,7 @@ internal partial class RegistrarBase
 {
     public ILifetime AllInterfaces()
     {
-        _interfaces = new AllContracts();
+        _interfaces = new AllInterfaces();
 
         return this;
     }
@@ -19,7 +19,7 @@ internal partial class RegistrarBase
     {
         AssertInterface<TInterface>();
 
-        _interfaces = new OnlyContract(typeof(TInterface));
+        _interfaces = new OnlyInterfaces(typeof(TInterface));
 
         return this;
     }

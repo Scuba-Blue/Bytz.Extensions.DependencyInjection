@@ -21,7 +21,7 @@ internal partial class RegistrarBase
     {
         List<Type> types = SelectTypes(_assembly, _basedOn);
 
-        AssertOnlyContracts(types, _interfaces as OnlyContract);
+        AssertOnlyContracts(types, _interfaces as OnlyInterfaces);
 
         new Configurator()
             .Configure
@@ -38,7 +38,7 @@ internal partial class RegistrarBase
     /// </summary>
     /// <param name="types">List of types.</param>
     /// <param name="onlyContract"></param>
-    private static void AssertOnlyContracts(IList<Type> types, OnlyContract onlyContract)
+    private static void AssertOnlyContracts(IList<Type> types, OnlyInterfaces onlyContract)
     {
         Type type = onlyContract?.Interface;
 
@@ -72,7 +72,7 @@ internal partial class RegistrarBase
         List<Type> types = SelectTypes(_assembly, _basedOn);
 
         AssertTypeToRegister(types);
-        AssertOnlyContracts(types, _interfaces as OnlyContract);
+        AssertOnlyContracts(types, _interfaces as OnlyInterfaces);
 
         new Configurator()
             .Configure

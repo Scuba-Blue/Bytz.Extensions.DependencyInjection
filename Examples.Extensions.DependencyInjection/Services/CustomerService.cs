@@ -1,4 +1,5 @@
 ﻿using Examples.Extensions.DependencyInjection.Domain.Customers;
+using Examples.Extensions.DependencyInjection.Services.Abstractions;
 using Examples.Extensions.DependencyInjection.Services.Contracts;
 
 namespace Examples.Extensions.DependencyInjection.Services;
@@ -7,7 +8,7 @@ namespace Examples.Extensions.DependencyInjection.Services;
 /// sample customer service.
 /// </summary>
 public class CustomerService
-: ICustomerService
+: ServiceBase, ICustomerService
 {
     public Customer LoadCustomer(int customerId)
     {

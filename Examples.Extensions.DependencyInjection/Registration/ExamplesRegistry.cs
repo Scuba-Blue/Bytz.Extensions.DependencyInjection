@@ -8,7 +8,7 @@ namespace Examples.Extensions.DependencyInjection.Registration;
 public class ExamplesRegistry
 : RegistryBase
 {
-    public override void OnRegister
+    protected override void OnRegister
     (
         IServiceCollection services
     )

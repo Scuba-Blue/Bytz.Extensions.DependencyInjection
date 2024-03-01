@@ -53,8 +53,8 @@ internal partial class Configurator
     {
         ConfigureImplementation(services, implementationType, lifetimes);
 
-        Configure(services, implementationType, contracts as AllContracts, lifetimes);
-        Configure(services, implementationType, contracts as OnlyContract, lifetimes);
+        Configure(services, implementationType, contracts as AllInterfaces, lifetimes);
+        Configure(services, implementationType, contracts as OnlyInterfaces, lifetimes);
         Configure(services, implementationType, contracts as NoInterfaces, lifetimes);
     }
 
@@ -135,7 +135,7 @@ internal partial class Configurator
     (
         IServiceCollection services,
         Type implementationType,
-        AllContracts interfaces,
+        AllInterfaces interfaces,
         LifetimeBase lifetime)
     {
         if (interfaces != null)
@@ -236,7 +236,7 @@ internal partial class Configurator
     (
         IServiceCollection services,
         Type implementationType,
-        OnlyContract contracts,
+        OnlyInterfaces contracts,
         LifetimeBase lifetime
     )
     {
