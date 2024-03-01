@@ -12,3 +12,8 @@
 /Examples.Extensions.DependencyInjection/Examples.Extensions.DependencyInjection.csproj.vspscc
 /Examples.Extensions.DependencyInjection/Examples.Extensions.DependencyInjection.csproj.vspscc
 /Tests.Extensions.DependencyInjection/Tests.Extensions.DependencyInjection.csproj.vspscc
+/.vs/Bytz.Extensions.DependencyInjection
+/Bytz.Extensions.DependencyInjection.Moq/bin
+/Bytz.Extensions.DependencyInjection.Moq/obj
+*.vspscc
+/Tests.Extensions.DependencyInjection/obj
