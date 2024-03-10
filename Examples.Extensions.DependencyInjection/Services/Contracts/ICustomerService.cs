@@ -14,11 +14,11 @@ public interface ICustomerService
     /// </summary>
     /// <param name="customerId">id of the customer.</param>
     /// <returns>requested customer.</returns>
-    Customer LoadCustomer(int customerId);
+    Task<Customer> ReadCustomerAsync(int customerId);
 
     /// <summary>
     /// save a customer.
     /// </summary>
     /// <param name="customer">instance of the customer to save.</param>
-    void SaveCustomer(Customer customer);
+    Task<Customer> SaveCustomerAsync(Customer customer);
 }

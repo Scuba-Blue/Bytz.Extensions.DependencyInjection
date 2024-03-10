@@ -3,5 +3,4 @@
 /// <summary>
 /// marker interface for all repositories.
 /// </summary>
-public interface IRepository
-{ }
+public interface IRepository;

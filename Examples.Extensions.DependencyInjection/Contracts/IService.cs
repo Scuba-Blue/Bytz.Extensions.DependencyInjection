@@ -3,5 +3,4 @@
 /// <summary>
 /// marker interface for all services.
 /// </summary>
-public interface IService
-{ }
+public interface IService;

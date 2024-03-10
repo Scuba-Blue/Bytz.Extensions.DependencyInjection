@@ -1,7 +1,8 @@
-﻿using Examples.Extensions.DependencyInjection.Domain.Customers;
-using Examples.Extensions.DependencyInjection.Domain.Orders;
+﻿using Examples.Extensions.DependencyInjection.Domain.Orders;
 using Examples.Extensions.DependencyInjection.Engines.Contracts;
+using Examples.Extensions.DependencyInjection.Repositories.Abstractions;
 using Examples.Extensions.DependencyInjection.Services.Contracts;
+using Microsoft.Extensions.Logging;
 
 namespace Examples.Extensions.DependencyInjection.Services;
 
@@ -10,21 +11,25 @@ namespace Examples.Extensions.DependencyInjection.Services;
 /// </summary>
 public class OrderService
 (
-    ITaxEngine taxEngine
+    IOrdersRepository _ordersRepository,
+    ITaxEngine _taxEngine,
+    ILogger<OrderService> _logger
 )
 : IOrderService
 {
-    //  made public for unit testing only.
-    public ITaxEngine TaxEngine { get; set; } = taxEngine;
-
-    public Order LoadOrder(int orderId)
+    public async Task<Order> ReadOrderAsync(int orderId)
     {
-        //  no real logic
-        return new Order { OrderId = orderId };
+        _logger.LogInformation($"reading orderId={orderId}");
+
+        return await _ordersRepository.ReadOrderAsync(orderId);
     }
 
-    public void PlaceOrder(Customer customer, Order order)
+    public async Task<Order> PlaceOrderAsync(Order order)
     {
-        //   do something
+        await _taxEngine.CalculateTaxesAsync(order);
+
+        await _ordersRepository.SaveOrderAsync(order);
+
+        return order;
     }
 }

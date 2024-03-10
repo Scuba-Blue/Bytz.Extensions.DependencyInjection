@@ -3,5 +3,4 @@
 /// <summary>
 /// marker interface for all engines.
 /// </summary>
-public interface IEngine
-{ }
+public interface IEngine;

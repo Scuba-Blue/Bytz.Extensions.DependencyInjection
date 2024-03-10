@@ -8,7 +8,7 @@ public class NoServiceTypeFound
     string message
 )
 : BytzExceptionBase(message)
-{ 
+{
     /// <summary>
     /// Throw a NoServiceTypeFound exception with a standard message.
     /// </summary>
@@ -16,6 +16,6 @@ public class NoServiceTypeFound
     /// <exception cref="NoServiceTypeFound">Exception to be thrown.</exception>
     public static void Throw<TType>()
     {
-        throw new NoServiceTypeFound($"Type {typeof(TType).FullName} is not an interface.");
+        throw new NoServiceTypeFound($"No Service of Type {typeof(TType).FullName} found.");
     }
 }

@@ -6,7 +6,6 @@ using Examples.Extensions.DependencyInjection.Services.Abstractions;
 using Examples.Extensions.DependencyInjection.Services.Contracts;
 using Microsoft.Extensions.DependencyInjection;
 using System;
-using System.Runtime.CompilerServices;
 using System.Threading.Tasks;
 using Xunit;
 

@@ -4,7 +4,6 @@ using Bytz.Extensions.DependencyInjection.Fluent.Registration.Bases;
 using Bytz.Extensions.DependencyInjection.Registration;
 using Microsoft.Extensions.DependencyInjection;
 using System;
-using System.ComponentModel.Design;
 using System.Linq;
 
 namespace Bytz.Extensions.DependencyInjection;
@@ -66,32 +65,35 @@ public static class IServiceCollectionExtensions
     )
     where TRegistry : RegistryBase, new()
     {
-        new TRegistry().Register(services);
-
-        return services;
+        return new TRegistry()
+            .Register(services);
     }
 
     /// <summary>
-    /// Remove the interface TService from IServiceCollection.
+    /// Remove a single service type from IServiceCollection.
     /// </summary>
-    /// <typeparam name="TService">The TService interface to be removed.</typeparam>
+    /// <typeparam name="TServiceType">The TService interface to be removed.</typeparam>
     /// <param name="services">Instance implementing IServiceCollection.</param>
     /// <returns></returns>
     /// <exception cref="NotAnInterfaceException">thrown if the generic type is not an interface.</exception>
     /// <exception cref="InvalidOperationException">thrown when there is more than one registration that is of the ServiceType of TService</exception>
-    /// <exception cref="NoServiceTypeFound">thrown if no matching servicetype is found for TService</exception>
-    public static IServiceCollection RemoveSingle<TService>
+    /// <exception cref="NoServiceTypeFound">thrown if no matching servicetype is found</exception>
+    /// <remarks>
+    /// right now there is a check to ensure that tservicetype is an interface. 
+    /// i have not thought through all of the possibilities (i have never needed to register a concrete class without an interface)
+    /// </remarks>
+    public static IServiceCollection RemoveSingle<TServiceType>
     (
         this IServiceCollection services
     )
-    where TService : class
+    where TServiceType : class
     {
-        AssertIsInterface<TService>();
+        AssertIsInterface<TServiceType>();
 
         ServiceDescriptor descriptor = services
-            .SingleOrDefault(s => s.ServiceType == typeof(TService));
+            .SingleOrDefault(s => s.ServiceType == typeof(TServiceType));
 
-        AssertDescriptorIsFound<TService>(descriptor);
+        AssertDescriptorIsFound<TServiceType>(descriptor);
 
         services.Remove(descriptor);
 
@@ -120,7 +122,7 @@ public static class IServiceCollectionExtensions
     private static void AssertDescriptorIsFound<TService>
     (
         ServiceDescriptor descriptor
-    ) 
+    )
     where TService : class
     {
         if (descriptor == null)

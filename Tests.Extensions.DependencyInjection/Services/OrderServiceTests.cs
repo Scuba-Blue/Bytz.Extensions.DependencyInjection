@@ -2,7 +2,6 @@
 using Examples.Extensions.DependencyInjection.Contracts;
 using Examples.Extensions.DependencyInjection.Services.Contracts;
 using Microsoft.Extensions.DependencyInjection;
-using Xunit;
 
 namespace Tests.Extensions.DependencyInjection.Services;
 
@@ -32,10 +31,4 @@ public class OrderServiceTests : TestBase
     }
 
     private IOrderService Service => this.ServiceProvider.GetRequiredService<IOrderService>();
-
-    [Fact]
-    public void Samples_OrderService_CheckDependency()
-    {
-        Assert.NotNull(this.Service.TaxEngine);
-    }
 }
