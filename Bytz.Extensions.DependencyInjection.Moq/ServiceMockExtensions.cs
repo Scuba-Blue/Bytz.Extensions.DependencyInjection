@@ -47,7 +47,7 @@ public static class ServiceMockExtensions
     {
         mocked = new Mock<TService>(behavior);
 
-        services.RemoveSingle<TService>().AddSingleton(mocked.Object);
+        services.Remove<TService>().AddSingleton(mocked.Object);
 
         return services;
     }

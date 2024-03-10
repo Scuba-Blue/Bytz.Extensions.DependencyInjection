@@ -16,11 +16,10 @@
         <Copyright>M. Douglas Bowan II</Copyright>
         <GenerateDocumentationFile>True</GenerateDocumentationFile>
 	    <PackageReleaseNotes>
-* upgrading to .NET 8.   
-* added functionality for having common registeries in order to share configurations.  
-  (initially for unit-testing purposes)
+* minor changes
+* added Remove[t] to extension methods for removing a service from the service collection
 	    </PackageReleaseNotes>
-	    <VersionPrefix>3.0.2</VersionPrefix>
+	    <VersionPrefix>3.0.5</VersionPrefix>
 	    <PackageRequireLicenseAcceptance>True</PackageRequireLicenseAcceptance>
 	    <GeneratePackageOnBuild>True</GeneratePackageOnBuild>
 	    <Description>Allow fluent registration of components with IServiceCollection</Description>
@@ -49,9 +48,14 @@
     <None Remove="Bytz.Extensions.DependencyInjection.xml" />
     <None Remove="Documents\License.txt" />
     <None Remove="Documents\README.md" />
+    <None Remove="Documents\ReleaseNotes.txt" />
   </ItemGroup>
 
   <ItemGroup>
+    <EmbeddedResource Include="Documents\ReleaseNotes.txt">
+      <PackagePath>\</PackagePath>
+      <Pack>True</Pack>
+    </EmbeddedResource>
     <EmbeddedResource Include="Documents\License.txt">
       <Pack>True</Pack>
       <PackagePath>\</PackagePath>

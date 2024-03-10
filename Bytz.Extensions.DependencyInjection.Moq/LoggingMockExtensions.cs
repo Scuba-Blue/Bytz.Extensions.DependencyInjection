@@ -49,7 +49,7 @@ public static class LoggingMockExtensions
         AddServicesToServicesIfNeeded(services);
 
         return services
-            .RemoveSingle<ILoggerFactory>()
+            .Remove<ILoggerFactory>()
             .AddSingleton<ILoggerFactory, TLoggingFactory>();
     }
 
@@ -79,7 +79,7 @@ public static class LoggingMockExtensions
     /// </summary>
     /// <param name="services">instance of the iservice collection</param>
     /// <returns>iservicecollection for chaining</returns>
-    public static IServiceCollection MockLoggingLoose
+    public static IServiceCollection MockLogging
     (
         this IServiceCollection services
     )

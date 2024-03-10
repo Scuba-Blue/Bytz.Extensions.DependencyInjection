@@ -76,7 +76,7 @@ public class IServiceCollectionExtensionTests
         var services = new ServiceCollection()
             .Register<ExamplesRegistry>();
 
-        Assert.Equal(12, services.Count);
+        Assert.Equal(40, services.Count);
 
         await Task.CompletedTask;
     }
@@ -96,7 +96,7 @@ public class IServiceCollectionExtensionTests
 
         Assert.Throws<NotAnInterfaceException>
         (
-            () => services.RemoveSingle<ServiceBase>()
+            () => services.Remove<ServiceBase>()
         );
 
         await Task.CompletedTask;
@@ -117,7 +117,7 @@ public class IServiceCollectionExtensionTests
 
         Assert.Equal(6, services.Count);
 
-        _ = services.RemoveSingle<IOrderService>();
+        _ = services.Remove<IOrderService>();
 
         Assert.Equal(5, services.Count);
 
@@ -139,7 +139,7 @@ public class IServiceCollectionExtensionTests
 
         Assert.Throws<InvalidOperationException>
         (
-            () => services.RemoveSingle<IService>()
+            () => services.Remove<IService>()
         );
 
         await Task.CompletedTask;
@@ -160,7 +160,7 @@ public class IServiceCollectionExtensionTests
 
         Assert.Throws<NoServiceTypeFound>
         (
-            () => services.RemoveSingle<INotFound>()
+            () => services.Remove<INotFound>()
         );
 
         await Task.CompletedTask;

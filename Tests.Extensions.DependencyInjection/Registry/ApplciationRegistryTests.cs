@@ -17,6 +17,6 @@ public class ApplciationRegistryTests
             new ServiceCollection()
             .Register<ExamplesRegistry>();
 
-        Assert.Equal(12, services.Count);
+        Assert.Equal(40, services.Count);
     }
 }

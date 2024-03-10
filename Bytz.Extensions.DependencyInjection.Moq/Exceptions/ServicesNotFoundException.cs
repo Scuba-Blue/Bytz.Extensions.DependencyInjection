@@ -1,4 +1,6 @@
-﻿namespace Bytz.Extensions.DependencyInjection.Exceptions;
+﻿using Bytz.Extensions.DependencyInjection.Exceptions;
+
+namespace Bytz.Extensions.DependencyInjection.Moq.Exceptions;
 
 /// <summary>
 /// 

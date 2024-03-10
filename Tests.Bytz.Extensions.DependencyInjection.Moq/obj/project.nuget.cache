@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "aLVZbL7GyE0RzH3PiME8LMRRIRfHLVlKeiQfGEU0wlm+g7U8CUNXpHwPqYsa4D0fvX5E1XKHWGTUnwsOQGuyiQ==",
+  "dgSpecHash": "pGi9VOM2uZukKGb7gjryMDpfeg0pQ4shvrwZhKVsKpac+80z9QXXUosyVFlBjdfdX9XPLmivvfOg9mHeLVWspw==",
   "success": true,
   "projectFilePath": "C:\\!git\\Bytz.Extensions.DependencyInjection\\Tests.Bytz.Extensions.DependencyInjection.Moq\\Tests.Bytz.Extensions.DependencyInjection.Moq.csproj",
   "expectedPackageFiles": [
@@ -35,8 +35,7 @@
     "C:\\Users\\mdbowan\\.nuget\\packages\\xunit.core\\2.7.0\\xunit.core.2.7.0.nupkg.sha512",
     "C:\\Users\\mdbowan\\.nuget\\packages\\xunit.extensibility.core\\2.7.0\\xunit.extensibility.core.2.7.0.nupkg.sha512",
     "C:\\Users\\mdbowan\\.nuget\\packages\\xunit.extensibility.execution\\2.7.0\\xunit.extensibility.execution.2.7.0.nupkg.sha512",
-    "C:\\Users\\mdbowan\\.nuget\\packages\\xunit.runner.visualstudio\\2.5.7\\xunit.runner.visualstudio.2.5.7.nupkg.sha512",
-    "C:\\Users\\mdbowan\\.nuget\\packages\\bytz.extensions.dependencyinjection\\3.0.2\\bytz.extensions.dependencyinjection.3.0.2.nupkg.sha512"
+    "C:\\Users\\mdbowan\\.nuget\\packages\\xunit.runner.visualstudio\\2.5.7\\xunit.runner.visualstudio.2.5.7.nupkg.sha512"
   ],
   "logs": []
 }

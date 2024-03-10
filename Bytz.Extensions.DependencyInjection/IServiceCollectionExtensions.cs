@@ -72,7 +72,7 @@ public static class IServiceCollectionExtensions
     /// <summary>
     /// Remove a single service type from IServiceCollection.
     /// </summary>
-    /// <typeparam name="TServiceType">The TService interface to be removed.</typeparam>
+    /// <typeparam name="TService">The TService interface to be removed.</typeparam>
     /// <param name="services">Instance implementing IServiceCollection.</param>
     /// <returns></returns>
     /// <exception cref="NotAnInterfaceException">thrown if the generic type is not an interface.</exception>
@@ -82,18 +82,18 @@ public static class IServiceCollectionExtensions
     /// right now there is a check to ensure that tservicetype is an interface. 
     /// i have not thought through all of the possibilities (i have never needed to register a concrete class without an interface)
     /// </remarks>
-    public static IServiceCollection RemoveSingle<TServiceType>
+    public static IServiceCollection Remove<TService>
     (
         this IServiceCollection services
     )
-    where TServiceType : class
+    where TService : class
     {
-        AssertIsInterface<TServiceType>();
+        AssertIsInterface<TService>();
 
         ServiceDescriptor descriptor = services
-            .SingleOrDefault(s => s.ServiceType == typeof(TServiceType));
+            .SingleOrDefault(s => s.ServiceType == typeof(TService));
 
-        AssertDescriptorIsFound<TServiceType>(descriptor);
+        AssertDescriptorIsFound<TService>(descriptor);
 
         services.Remove(descriptor);
 

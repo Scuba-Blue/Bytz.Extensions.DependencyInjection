@@ -1,4 +1,5 @@
 ﻿using Bytz.Extensions.DependencyInjection.Exceptions;
+using Bytz.Extensions.DependencyInjection.Moq.Exceptions;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
 using Moq;

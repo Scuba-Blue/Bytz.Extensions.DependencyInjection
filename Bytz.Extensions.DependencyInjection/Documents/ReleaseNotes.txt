@@ -1,0 +1,5 @@
+﻿Release Notes:
+
+3.0.2
+- added 
+	RemoveService to the extension methods for IServiceCollection

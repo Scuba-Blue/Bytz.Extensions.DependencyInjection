@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Tests.Bytz.Extensions.DependencyInjection.Moq")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+be2341e5417c7d5c605fccd17d28f847a623462f")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+6a4cf899d028aa01409022406c0a89151ca62e98")]
 [assembly: System.Reflection.AssemblyProductAttribute("Tests.Bytz.Extensions.DependencyInjection.Moq")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Tests.Bytz.Extensions.DependencyInjection.Moq")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

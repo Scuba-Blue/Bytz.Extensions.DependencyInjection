@@ -14,7 +14,7 @@ public class MockLoggingTests
     public async Task Moq_CustomerService_MockLogger_T_From_Base()
     {
         var provider = Services
-            .MockLoggingLoose()
+            .MockLogging()
             .BuildServiceProvider();
 
         var customerService = provider.GetRequiredService<ICustomerService>();
